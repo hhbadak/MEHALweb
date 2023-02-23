@@ -1,0 +1,116 @@
+﻿*, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+/* Color Theme */
+.grayColor {
+    background-color: #A1A2A6;
+}
+
+.darkBlueColor {
+    background-color: #024959;
+}
+
+.yellowColor {
+    background-color: #F2C12E;
+}
+
+.orangeColor {
+    background-color: #F2AE30;
+}
+
+.coffeeColor {
+    background-color: #593E25;
+}
+/*header panel*/
+.header {
+    width: 100%;
+    height: 75px;
+}
+
+    .header h1 {
+        width: 90%;
+        text-align: center;
+        padding-top: 15px;
+        color: #024959;
+    }
+
+.userPanel {
+    float: right;
+    height: 40px;
+    width: 10%;
+    margin-right: 40px;
+    background-color: #024959;
+    margin-top: -40px;
+}
+
+    .userPanel a {
+        justify-content: center;
+        display: flex;
+        text-decoration: none;
+        color: #F2C12E;
+        font-size: 16pt;
+        padding: 6px;
+    }
+
+        .userPanel a:hover {
+            color: #024959;
+            background-color: #A1A2A6;
+        }
+
+    .userPanel i {
+        font-weight: 600;
+        padding-top: 5px;
+        padding-left: 8px;
+    }
+
+.container {
+    width: 100%;
+    min-height: 710px;
+}
+
+    .container .inContainer {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 500px;
+    }
+
+        .container .inContainer a {
+            padding: 10px;
+            text-decoration: none;
+            color: #A1A2A6;
+            background-color: #593E25;
+            font-weight: 900;
+            justify-content: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 5px;
+            display: inline-flex;
+            margin-top: 50px;
+            margin-left: 50px;
+            font-size: 18pt;
+        }
+
+            .container .inContainer a:hover {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 15px;
+                background-color: #A1A2A6;
+                color: #593E25;
+            }
+
+.userTable {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+    padding: 5px;
+    font-weight: 900;
+}

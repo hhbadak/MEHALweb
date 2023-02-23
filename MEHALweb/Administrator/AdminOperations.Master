@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminOperations.master.cs" Inherits="MEHALweb.Administrator.AdminOperations" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MEHAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+    <link href="Assets/CSS/AdminPanel.css" rel="stylesheet" />
+    <link href="Assets/CSS/fontawesome/css/all.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header orangeColor">
+            <h1>ADMİN PANEL</h1>
+            <div class="userPanel">
+                <asp:Label ID="lbl_user" runat="server"></asp:Label>
+                <asp:LinkButton CssClass="materialSymbolsOutlined" ID="lbtn_exit" runat="server" OnClick="lbtn_exit_Click">Çıkış
+                <i class="fa-solid fa-right-from-bracket"></i></asp:LinkButton>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div class="container darkBlueColor">
+            <div class="inContainer">
+                <asp:LinkButton ID="lbtn_accountRestriction" runat="server" OnClick="lbtn_accountRestriction_Click">Kullanıcı Profil Şikayetleri</asp:LinkButton>
+                <asp:LinkButton ID="lbtn_deletePost" runat="server" OnClick="lbtn_deletePost_Click">Gönderi Şikayetleri</asp:LinkButton>
+                <asp:LinkButton ID="lbtn_deleteComment" runat="server" OnClick="lbtn_deleteComment_Click">Yorum Şikayetleri</asp:LinkButton>
+            </div>
+            <div class="list">
+                <asp:ListView ID="lv_accountRestriction" runat="server" OnItemCommand="lv_lbtn_accountRestriction_ItemCommand" Visible="false">
+                    <LayoutTemplate>
+                        <table class="userTable" border="1" cellspacing="0">
+                            <tr>
+                                <th>Şikayet ID</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Şikayet Gerekçesi</th>
+                                <th>Şikayet Tarihi</th>
+                                <th>Seçenekler</th>
+                            </tr>
+                            <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td><%#Eval("ID") %></td>
+                            <td><%#Eval("user") %></td>
+                            <td><%#Eval("subjects") %></td>
+                            <td><%#Eval("date") %></td>
+                            <td>
+                                <asp:LinkButton ID="lbtn_goUserProfile" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="goUserProfile">Kullanıcı Profiline Git</asp:LinkButton>
+                                <asp:LinkButton ID="lbtn_userPassive" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="userPassive">Hesabı Askıya Al</asp:LinkButton>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+                <asp:ListView ID="lv_deletePost" runat="server" Visible="false">
+                    <LayoutTemplate>
+                        <table class="userTable" border="1" cellspacing="0">
+                            <tr>
+                                <th>Şikayet ID</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Yapılan Paylaşım</th>
+                                <th>Şikayet Gerekçesi</th>
+                                <th>Şikayet Tarihi</th>
+                                <th>Seçenekler</th>
+                            </tr>
+                            <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td><%#Eval("ID") %></td>
+                            <td><%#Eval("user") %></td>
+                            <td><%#Eval("sharing") %></td>
+                            <td><%#Eval("subjects") %></td>
+                            <td><%#Eval("date") %></td>
+                            <td>
+                                <asp:LinkButton ID="lbtn_goSharing" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="goSharing">Paylaşıma Git</asp:LinkButton>
+                                <asp:LinkButton ID="lbtn_sharingPassive" runat="server" CommandArgument='<%#Eval("ID") %>'
+                                    CommandName="sharingPassive">Paylaşımı Kaldır</asp:LinkButton>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+                <asp:ListView ID="lv_deleteComment" runat="server" Visible="false">
+                    <LayoutTemplate>
+                        <table class="userTable" border="1" cellspacing="0">
+                            <tr>
+                                <th>Şikayet ID</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Yapılan Yorum</th>
+                                <th>Şikayet Gerekçesi</th>
+                                <th>Şikayet Tarihi</th>
+                                <th>Seçenekler</th>
+                            </tr>
+                            <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td><%#Eval("ID") %></td>
+                            <td><%#Eval("user") %></td>
+                            <td><%#Eval("comment") %></td>
+                            <td><%#Eval("subjects") %></td>
+                            <td><%#Eval("date") %></td>
+                            <td>
+                                <asp:LinkButton ID="lbtn_goComment" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="goComment">Yoruma Git</asp:LinkButton>
+                                <asp:LinkButton ID="lbtn_userComment" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="userComment">Yorumu Kaldır</asp:LinkButton>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

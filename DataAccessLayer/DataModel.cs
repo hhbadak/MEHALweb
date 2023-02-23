@@ -17,6 +17,112 @@ namespace DataAccessLayer
             cmd = con.CreateCommand();
         }
 
+        #region MEMBER TRANSACTIONS
+
+        public List<Complaints> listUserComplaint()
+        {
+            try
+            {
+                List<Complaints> comp = new List<Complaints>();
+                cmd.CommandText = "SELECT c.ID, u.UserName, compSj.Subject, c.Date \r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 2";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Complaints cmp = new Complaints();
+                    cmp.ID = reader.GetInt32(0);
+                    cmp.userName = reader.GetString(1);
+                    cmp.subjects = reader.GetString(2);
+                    cmp.date = reader.GetDateTime(3);
+                    cmp.dateStr = reader.GetDateTime(3).ToShortDateString();
+                    comp.Add(cmp);
+                }
+                return comp;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+        public bool accountRestriction(int id)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Sharing SET Status = 0 WHERE User_ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Comments SET Status = 0 WHERE User_ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Chats SET Status = 0 WHERE OutGoingChat = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Sharing SET Status = 0 WHERE User_ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE FriendShip SET Status = 0 WHERE OutGoingRequest = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Users SET Status = 0 WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+        public bool deletePost(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE Comments WHERE Sharing_ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "DELETE Sharing Where ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+        public bool deleteComment(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE Comments WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+
+        #endregion
 
     }
 }
