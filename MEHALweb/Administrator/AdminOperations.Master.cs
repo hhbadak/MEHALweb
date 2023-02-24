@@ -24,17 +24,29 @@ namespace MEHALweb.Administrator
 
         protected void lbtn_accountRestriction_Click(object sender, EventArgs e)
         {
-
+            lv_accountRestriction.Visible = true;
+            lv_deleteComment.Visible = false;
+            lv_deletePost.Visible = false;
+            lv_accountRestriction.DataSource = dm.listUserComplaint();
+            lv_accountRestriction.DataBind();
         }
 
         protected void lbtn_deletePost_Click(object sender, EventArgs e)
         {
-
+            lv_accountRestriction.Visible = false;
+            lv_deleteComment.Visible = false;
+            lv_deletePost.Visible = true;
+            lv_accountRestriction.DataSource = dm.listSharingComplaint();
+            lv_accountRestriction.DataBind();
         }
 
         protected void lbtn_deleteComment_Click(object sender, EventArgs e)
         {
-
+            lv_accountRestriction.Visible = false;
+            lv_deleteComment.Visible = true;
+            lv_deletePost.Visible = false;
+            lv_accountRestriction.DataSource = dm.listCommentComplaint();
+            lv_accountRestriction.DataBind();
         }
 
         protected void lv_lbtn_accountRestriction_ItemCommand(object sender, ListViewCommandEventArgs e)
