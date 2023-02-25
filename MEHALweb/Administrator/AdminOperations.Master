@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header orangeColor">
-            <h1>ADMİN PANEL</h1>
+            <label>ADMİN PANEL</label>
             <div class="userPanel">
                 <asp:Label ID="lbl_user" runat="server"></asp:Label>
                 <asp:LinkButton CssClass="materialSymbolsOutlined" ID="lbtn_exit" runat="server" OnClick="lbtn_exit_Click">Çıkış

@@ -31,16 +31,20 @@ body {
     height: 57px;
 }
 
-    .header h1 {
-        text-align: center;
+    .header label {
         color: #024959;
+        font-size: x-large;
+        font-weight: 900;
+        margin-left: 500px;
     }
 
 .userPanel {
     float: right;
-    width: 10%;
+    width: 7%;
     margin-right: 40px;
     background-color: #024959;
+    margin-top: 4px;
+    padding: 1px;
 }
 
     .userPanel a {
@@ -48,12 +52,12 @@ body {
         display: flex;
         text-decoration: none;
         color: #F2C12E;
-        padding: 6px;
     }
 
         .userPanel a:hover {
             color: #024959;
             background-color: #A1A2A6;
+            border: none;
         }
 
     .userPanel i {
