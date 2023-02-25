@@ -24,7 +24,7 @@ namespace DataAccessLayer
             try
             {
                 List<Complaints> comp = new List<Complaints>();
-                cmd.CommandText = "SELECT c.ID, u.UserName, compSj.Subject, c.Date \r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 2";
+                cmd.CommandText = "SELECT c.ID, u.UserName, compSj.Subject, c.Date \r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -51,7 +51,7 @@ namespace DataAccessLayer
             try
             {
                 List<Complaints> comp = new List<Complaints>();
-                cmd.CommandText = "SELECT cmp.ID, u.UserName, s.Content, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Sharing AS s ON s.ID = cmp.Sharing_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID";
+                cmd.CommandText = "SELECT cmp.ID, u.UserName, s.Content, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Sharing AS s ON s.ID = cmp.Sharing_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID WHERE cmp.Status = 1 AND cmp.C_Area_ID = 3";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -79,7 +79,7 @@ namespace DataAccessLayer
             try
             {
                 List<Complaints> comp = new List<Complaints>();
-                cmd.CommandText = "SELECT cmp.ID, u.UserName, comm.Comment, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Comments AS comm ON comm.ID = cmp.Comment_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID";
+                cmd.CommandText = "SELECT cmp.ID, u.UserName, comm.Comment, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Comments AS comm ON comm.ID = cmp.Comment_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID WHERE cmp.Status = 1 AND cmp.C_Area_ID = 2";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -177,7 +177,7 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-
+        
         #endregion
 
     }
