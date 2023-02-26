@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminPanelArea.master.cs" Inherits="MEHALweb.Administrator.AdminPanelArea" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Panel</title>
+    <link href="Assets/CSS/AdminPanel.css" rel="stylesheet" />
+    <link href="Assets/CSS/fontawesome/css/all.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="header darkNavyBlue">
+            <div class="headerTitle">
+                <h1>ADMINISTRATOR LAYOUT PAGE</h1>
+            </div>
+            <div class="headerUserControl">
+                <asp:Label ID="lbl_userControl" runat="server"></asp:Label>
+                <asp:LinkButton ID="lbtn_userControl" runat="server" onmouseenter="enter()" onmouseleave="leave()" OnClick="lbtn_userControl_Click">
+                    Çıkış Yap
+                    <i class='fa-sharp fa-solid fa-door-closed'></i>
+                </asp:LinkButton>
+            </div>
+        </header>
+        <div style="clear: both"></div>
+        <aside class="sidebar darkNavyBlue">
+            <div class="sidebarTitle">
+                <h4>İŞLEMLER SEKMESİ</h4>
+            </div>
+            <div class="buttons">
+                <asp:LinkButton ID="lbtn_userComplaints" runat="server" OnClick="lbtn_userComplaints_Click">Kullanıcı Şikayetleri</asp:LinkButton>
+                <asp:LinkButton ID="lbtn_commentComplaints" runat="server" OnClick="lbtn_commentComplaints_Click">Yorum Şikayetleri</asp:LinkButton>
+                <asp:LinkButton ID="lbtn_sharingComplaints" runat="server" OnClick="lbtn_sharingComplaints_Click">Gönderi Şikayetleri</asp:LinkButton>
+            </div>
+        </aside>
+        <script>
+            function enter() {
+                document.getElementById("lbtn_userControl").innerHTML = " Çıkış Yap <i class='fa-sharp fa-solid fa-door-open'></i>";
+            }
+            function leave() {
+                document.getElementById("lbtn_userControl").innerHTML = " Çıkış Yap <i class='fa-sharp fa-solid fa-door-closed'></i>";
+            }
+        </script>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

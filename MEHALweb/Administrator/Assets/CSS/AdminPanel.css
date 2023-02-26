@@ -5,128 +5,96 @@
 
 body {
     font-family: 'Playfair Display', serif;
+    background-color: #99B4BF;
 }
 /* Color Theme */
-.grayColor {
-    background-color: #A1A2A6;
+.navyBlue {
+    color: #2D4B73;
 }
 
-.darkBlueColor {
-    background-color: #024959;
+.darkNavyBlue {
+    color: #253C59;
 }
 
-.yellowColor {
-    background-color: #F2C12E;
+.gray {
+    color: #99B4BF;
 }
 
-.orangeColor {
-    background-color: #F2AE30;
+.yellow {
+    color: #D9B70D;
 }
 
-.coffeeColor {
-    background-color: #593E25;
+.darkYellow {
+    color: #BF8D30;
 }
-/*header panel*/
+
 .header {
-    height: 57px;
+    width: 100%;
+    height: 60px;
+    background-color: #253C59;
 }
 
-    .header label {
-        color: #024959;
-        font-size: x-large;
-        font-weight: 900;
-        margin-left: 500px;
+    .header .headerTitle {
+        width: 85%;
+        height: 100%;
+        float: left;
     }
 
-.userPanel {
-    float: right;
-    width: 7%;
-    margin-right: 40px;
-    background-color: #024959;
-    margin-top: 4px;
-    padding: 1px;
-}
-
-    .userPanel a {
-        justify-content: center;
-        display: flex;
-        text-decoration: none;
-        color: #F2C12E;
-    }
-
-        .userPanel a:hover {
-            color: #024959;
-            background-color: #A1A2A6;
-            border: none;
+        .header .headerTitle h1 {
+            color: #D9B70D;
+            text-align: center;
+            margin-top: 10px;
         }
 
-    .userPanel i {
-        font-weight: 600;
-        padding-top: 5px;
-        padding-left: 8px;
+    .header .headerUserControl {
+        float: right;
+        width: 15%;
+        height: 100%;
     }
 
+        .header .headerUserControl a {
+            text-decoration: none;
+            color: #D9B70D;
+            display: block;
+            width: 110px;
+            height: 20px;
+            font-size: larger;
+            float: right;
+            margin-top: 17px;
+        }
 
-.container {
-    width: 100%;
-    min-height: 710px;
+.sidebar {
+    margin-top: 45px;
+    margin-right: 20px;
+    width: 15%;
+    height: 450px;
+    float: right;
+    background-color: #2D4B73;
+    opacity: 0.8
 }
 
-    .container .inContainer {
-        width: 70%;
+    .sidebar .sidebarTitle {
+        width: 85%;
+        height: 10%;
         margin-left: auto;
         margin-right: auto;
-        min-height: 120px;
     }
 
-        .container .inContainer a {
-            padding: 10px;
-            text-decoration: none;
-            color: #A1A2A6;
-            background-color: #593E25;
-            font-weight: 900;
-            justify-content: center;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 15px;
-            border-bottom-left-radius: 5px;
-            display: inline-flex;
-            margin-top: 50px;
-            margin-left: 50px;
-            font-size: 18pt;
+        .sidebar .sidebarTitle h4 {
+            color: #D9B70D;
+            text-align: center;
+            margin-top: 10px;
         }
 
-            .container .inContainer a:hover {
-                border-top-left-radius: 5px;
-                border-top-right-radius: 15px;
-                border-bottom-right-radius: 5px;
-                border-bottom-left-radius: 15px;
-                background-color: #A1A2A6;
-                color: #593E25;
-            }
-
-.userTable {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    border: none;
-    padding: 5px;
-    font-weight: 900;
+.buttons {
+    height: 60%;
+    width: 80%;
+    margin: inherit;
+    padding: 25px;
 }
 
-    .userTable tbody tr th {
-        padding: 10px;
-        background-color: #A1A2A6;
-    }
-
-    .userTable tbody tr td {
-        padding: 5px 10px 5px 10px;
-        background-color: #A1A2A6;
-    }
-
-    .userTable tbody td a {
+    .buttons a {
+        color: #99B4BF;
         text-decoration: none;
-        color: #F2AE30;
-        background-color: #593E25;
-        padding: 3px;
+        font-weight: 700;
     }

@@ -11,61 +11,79 @@ namespace MEHALweb.Administrator
 {
 
 
-    public partial class AdminOperations1
+    public partial class AdminPanelArea
     {
 
         /// <summary>
-        /// lbtn_accountRestriction control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_accountRestriction;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// lbtn_deletePost control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_deletePost;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lbtn_deleteComment control.
+        /// lbl_userControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_deleteComment;
+        protected global::System.Web.UI.WebControls.Label lbl_userControl;
 
         /// <summary>
-        /// lv_accountRestriction control.
+        /// lbtn_userControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_accountRestriction;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_userControl;
 
         /// <summary>
-        /// lv_deletePost control.
+        /// lbtn_userComplaints control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_deletePost;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_userComplaints;
 
         /// <summary>
-        /// lv_deleteComment control.
+        /// lbtn_commentComplaints control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_deleteComment;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_commentComplaints;
+
+        /// <summary>
+        /// lbtn_sharingComplaints control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_sharingComplaints;
+
+        /// <summary>
+        /// ContentPlaceHolder1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }
