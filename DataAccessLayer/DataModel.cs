@@ -18,13 +18,39 @@ namespace DataAccessLayer
         }
 
         #region MEMBER TRANSACTIONS
-
+        public Complaints bringUserComplaint(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT c.ID, u.UserName, tUser.UserName, compSj.Subject, c.Date\r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN Users AS tUser ON tUser.ID = c.TheComplainingUser\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 1 AND c.ID= @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                Complaints comp = new Complaints();
+                while (reader.Read())
+                {
+                    comp.ID = reader.GetInt32(0);
+                    comp.userName = reader.GetString(1);
+                    comp.theComplainingUser = reader.GetString(2);
+                    comp.subjects = reader.GetString(3);
+                    comp.date = reader.GetDateTime(4);
+                    comp.dateStr = reader.GetDateTime(4).ToShortDateString();
+                }
+                return comp;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         public List<Complaints> listUserComplaint()
         {
             try
             {
                 List<Complaints> comp = new List<Complaints>();
-                cmd.CommandText = "SELECT c.ID, u.UserName, compSj.Subject, c.Date \r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 1";
+                cmd.CommandText = "SELECT c.ID, u.UserName, tUser.UserName, compSj.Subject, c.Date\r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN Users AS tUser ON tUser.ID = c.TheComplainingUser\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -33,9 +59,10 @@ namespace DataAccessLayer
                     Complaints cmp = new Complaints();
                     cmp.ID = reader.GetInt32(0);
                     cmp.userName = reader.GetString(1);
-                    cmp.subjects = reader.GetString(2);
-                    cmp.date = reader.GetDateTime(3);
-                    cmp.dateStr = reader.GetDateTime(3).ToShortDateString();
+                    cmp.theComplainingUser = reader.GetString(2);
+                    cmp.subjects = reader.GetString(3);
+                    cmp.date = reader.GetDateTime(4);
+                    cmp.dateStr = reader.GetDateTime(4).ToShortDateString();
                     comp.Add(cmp);
                 }
                 return comp;
@@ -51,7 +78,7 @@ namespace DataAccessLayer
             try
             {
                 List<Complaints> comp = new List<Complaints>();
-                cmd.CommandText = "SELECT cmp.ID, u.UserName, s.Content, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Sharing AS s ON s.ID = cmp.Sharing_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID WHERE cmp.Status = 1 AND cmp.C_Area_ID = 3";
+                cmd.CommandText = "SELECT cmp.ID, u.UserName, s.Content, tUser.UserName, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Users AS tUser ON tUser.ID = cmp.TheComplainingUser\r\nJOIN Sharing AS s ON s.ID = cmp.Sharing_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID WHERE cmp.Status = 1 AND cmp.C_Area_ID = 3";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -61,9 +88,10 @@ namespace DataAccessLayer
                     cmp.ID = reader.GetInt32(0);
                     cmp.userName = reader.GetString(1);
                     cmp.sharing = reader.GetString(2);
-                    cmp.subjects = reader.GetString(3);
-                    cmp.date = reader.GetDateTime(4);
-                    cmp.dateStr = reader.GetDateTime(4).ToShortDateString();
+                    cmp.theComplainingUser = reader.GetString(3);
+                    cmp.subjects = reader.GetString(4);
+                    cmp.date = reader.GetDateTime(5);
+                    cmp.dateStr = reader.GetDateTime(5).ToShortDateString();
                     comp.Add(cmp);
                 }
                 return comp;
@@ -79,7 +107,7 @@ namespace DataAccessLayer
             try
             {
                 List<Complaints> comp = new List<Complaints>();
-                cmd.CommandText = "SELECT cmp.ID, u.UserName, comm.Comment, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Comments AS comm ON comm.ID = cmp.Comment_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID WHERE cmp.Status = 1 AND cmp.C_Area_ID = 2";
+                cmd.CommandText = "SELECT cmp.ID, u.UserName, comm.Comment, tUser.UserName, c.Subject, cmp.Date FROM Complaints AS cmp\r\nJOIN Users AS u ON u.ID = cmp.User_ID\r\nJOIN Users AS tUser ON tUser.ID = cmp.TheComplainingUser\r\nJOIN Comments AS comm ON comm.ID = cmp.Comment_ID\r\nJOIN ComplaintSubjects AS c ON c.ID = cmp.C_Subjects_ID WHERE cmp.Status = 1 AND cmp.C_Area_ID = 2";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -89,9 +117,10 @@ namespace DataAccessLayer
                     cmp.ID = reader.GetInt32(0);
                     cmp.userName = reader.GetString(1);
                     cmp.comment = reader.GetString(2);
-                    cmp.subjects = reader.GetString(3);
-                    cmp.date = reader.GetDateTime(4);
-                    cmp.dateStr = reader.GetDateTime(4).ToShortDateString();
+                    cmp.theComplainingUser = reader.GetString(3);
+                    cmp.subjects = reader.GetString(4);
+                    cmp.date = reader.GetDateTime(5);
+                    cmp.dateStr = reader.GetDateTime(5).ToShortDateString();
                     comp.Add(cmp);
                 }
                 return comp;
@@ -128,6 +157,10 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("id", id);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE Users SET Status = 0 WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Complaints SET Status = 0 WHERE ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("id", id);
                 cmd.ExecuteNonQuery();
@@ -177,7 +210,7 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-        
+
         #endregion
 
     }

@@ -18,20 +18,5 @@ namespace MEHALweb.Administrator
         {
 
         }
-
-        protected void lbtn_userComplaints_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void lbtn_commentComplaints_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void lbtn_sharingComplaints_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

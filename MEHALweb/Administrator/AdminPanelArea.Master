@@ -25,16 +25,6 @@
             </div>
         </header>
         <div style="clear: both"></div>
-        <aside class="sidebar darkNavyBlue">
-            <div class="sidebarTitle">
-                <h4>İŞLEMLER SEKMESİ</h4>
-            </div>
-            <div class="buttons">
-                <asp:LinkButton ID="lbtn_userComplaints" runat="server" OnClick="lbtn_userComplaints_Click">Kullanıcı Şikayetleri</asp:LinkButton>
-                <asp:LinkButton ID="lbtn_commentComplaints" runat="server" OnClick="lbtn_commentComplaints_Click">Yorum Şikayetleri</asp:LinkButton>
-                <asp:LinkButton ID="lbtn_sharingComplaints" runat="server" OnClick="lbtn_sharingComplaints_Click">Gönderi Şikayetleri</asp:LinkButton>
-            </div>
-        </aside>
         <script>
             function enter() {
                 document.getElementById("lbtn_userControl").innerHTML = " Çıkış Yap <i class='fa-sharp fa-solid fa-door-open'></i>";

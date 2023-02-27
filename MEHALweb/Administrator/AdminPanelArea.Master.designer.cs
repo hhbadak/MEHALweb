@@ -51,33 +51,6 @@ namespace MEHALweb.Administrator
         protected global::System.Web.UI.WebControls.LinkButton lbtn_userControl;
 
         /// <summary>
-        /// lbtn_userComplaints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_userComplaints;
-
-        /// <summary>
-        /// lbtn_commentComplaints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_commentComplaints;
-
-        /// <summary>
-        /// lbtn_sharingComplaints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_sharingComplaints;
-
-        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

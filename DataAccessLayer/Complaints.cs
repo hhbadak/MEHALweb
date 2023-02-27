@@ -16,7 +16,8 @@ namespace DataAccessLayer
         public int comment_ID { get; set; }
         public string comment { get; set; }
         public string sharing { get; set; }
-        public int theComplainingUser { get; set; }
+        public int theComplainingUser_ID { get; set; }
+        public string theComplainingUser { get; set; }
         public string userName { get; set; }
         public string area { get; set; }
         public string subjects { get; set; }
