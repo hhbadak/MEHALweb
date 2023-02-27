@@ -70,7 +70,8 @@ body {
     height: 450px;
     float: right;
     background-color: #2D4B73;
-    opacity: 0.8
+    opacity: 0.8;
+    border-radius: 10% / 50%;
 }
 
     .sidebar .sidebarTitle {
