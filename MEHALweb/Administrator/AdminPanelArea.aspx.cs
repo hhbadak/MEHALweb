@@ -51,6 +51,43 @@ namespace MEHALweb.Administrator
                 int id = Convert.ToInt32(e.CommandArgument);
                 comp = dm.bringUserComplaint(id);
                 dm.accountRestriction(id);
+                if (dm.accountRestriction(id))
+                {
+                    lv_userComplaints.DataSource = dm.listUserComplaint();
+                    lv_userComplaints.DataBind();
+                }
+            }
+        }
+
+        protected void lv_commentDelete_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            Complaints comp = new Complaints();
+            if (e.CommandName == "commentDelete")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                comp = dm.bringCommentComplaint(id);
+                dm.deleteComment(id);
+                if (dm.deleteComment(id))
+                {
+                    lv_commentDelete.DataSource = dm.listCommentComplaint();
+                    lv_commentDelete.DataBind();
+                }
+            }
+        }
+
+        protected void lv_sharingDelete_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            Complaints comp = new Complaints();
+            if (e.CommandName == "sharingDelete")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                comp = dm.bringSharingComplaint(id);
+                dm.deletePost(id);
+                if (dm.deletePost(id))
+                {
+                    lv_sharingDelete.DataSource = dm.listSharingComplaint();
+                    lv_sharingDelete.DataBind();
+                }
             }
         }
     }

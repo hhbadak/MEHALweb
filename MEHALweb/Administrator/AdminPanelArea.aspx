@@ -47,7 +47,7 @@
                 </tr>
             </ItemTemplate>
         </asp:ListView>
-        <asp:ListView ID="lv_commentDelete" runat="server" Visible="false">
+        <asp:ListView ID="lv_commentDelete" runat="server" OnItemCommand="lv_commentDelete_ItemCommand" Visible="false">
             <LayoutTemplate>
                 <table class="listTable" border="1" cellspacing="0">
                     <tr>
@@ -79,7 +79,7 @@
                 </tr>
             </ItemTemplate>
         </asp:ListView>
-        <asp:ListView ID="lv_sharingDelete" runat="server" Visible="false">
+        <asp:ListView ID="lv_sharingDelete" runat="server" OnItemCommand="lv_sharingDelete_ItemCommand" Visible="false">
             <LayoutTemplate>
                 <table class="listTable" border="1" cellspacing="0">
                     <tr>

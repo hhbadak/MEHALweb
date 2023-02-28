@@ -94,6 +94,66 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public Complaints bringCommentComplaint(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT c.ID, u.UserName, comp.Comment, tUser.UserName, compSj.Subject, c.Date, c.Time\r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN Comments AS comp ON comp.ID = c.Comment_ID\r\nJOIN Users AS tUser ON tUser.ID = c.TheComplainingUser\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 2 AND c.ID= @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                Complaints comp = new Complaints();
+                while (reader.Read())
+                {
+                    comp.ID = reader.GetInt32(0);
+                    comp.userName = reader.GetString(1);
+                    comp.comment = reader.GetString(2);
+                    comp.theComplainingUser = reader.GetString(3);
+                    comp.subjects = reader.GetString(4);
+                    comp.date = reader.GetDateTime(5);
+                    comp.dateStr = reader.GetDateTime(5).ToShortDateString();
+                    comp.time = reader.GetDateTime(6);
+                    comp.timeStr = reader.GetDateTime(6).ToShortDateString();
+                }
+                return comp;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+        public Complaints bringSharingComplaint(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT c.ID, u.UserName, comp.Comment, tUser.UserName, compSj.Subject, c.Date, c.Time\r\nFROM Complaints AS c\r\nJOIN Users AS u ON u.ID = c.User_ID\r\nJOIN Comments AS comp ON comp.ID = c.Comment_ID\r\nJOIN Users AS tUser ON tUser.ID = c.TheComplainingUser\r\nJOIN ComplaintSubjects AS compSj ON c.C_Subjects_ID = compSj.ID\r\nWHERE c.Status = 1 AND c.C_Area_ID = 3 AND c.ID= @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                Complaints comp = new Complaints();
+                while (reader.Read())
+                {
+                    comp.ID = reader.GetInt32(0);
+                    comp.userName = reader.GetString(1);
+                    comp.comment = reader.GetString(2);
+                    comp.theComplainingUser = reader.GetString(3);
+                    comp.subjects = reader.GetString(4);
+                    comp.date = reader.GetDateTime(5);
+                    comp.dateStr = reader.GetDateTime(5).ToShortDateString();
+                    comp.time = reader.GetDateTime(6);
+                    comp.timeStr = reader.GetDateTime(6).ToShortDateString();
+                }
+                return comp;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         public List<Complaints> listUserComplaint()
         {
             try
@@ -225,12 +285,16 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "DELETE Comments WHERE Sharing_ID = @id";
+                cmd.CommandText = "UPDATE Comments SET Status = 0 WHERE Sharing_ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "DELETE Sharing Where ID = @id";
+                cmd.CommandText = "UPDATE Sharing SET Status = 0 Where ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE Complaints SET Status = 0 WHERE ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
@@ -246,10 +310,13 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "DELETE Comments WHERE ID = @id";
+                cmd.CommandText = "UPDATE Comments Set Status = 0 WHERE ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
+                cmd.CommandText = "UPDATE Complaints SET Status = 0 WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
                 return true;
             }
