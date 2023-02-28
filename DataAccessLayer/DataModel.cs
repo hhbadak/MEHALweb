@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,54 @@ namespace DataAccessLayer
         }
 
         #region MEMBER TRANSACTIONS
+        public Users loginAdmin(string username, string password)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT COUNT(*) FROM Users WHERE MemberStatus_ID = 1 AND UserName = @uName AND Password = @password";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@uName", username);
+                cmd.Parameters.AddWithValue("password", password);
+                con.Open();
+                int number = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (number > 0)
+                {
+                    cmd.CommandText = "SELECT u.ID, u.Name, u.Surname, u.UserName, u.EMail, u.Password, u.DateOfBirth, u.Images, m.Status, u.DateOfRegistration, u.Status FROM Users AS u\r\nJOIN MemberStatus AS m ON m.ID = u.MemberStatus_ID\r\nWHERE u.UserName = @uName AND u.Password = @password";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@uName", username);
+                    cmd.Parameters.AddWithValue("password", password);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    Users u = new Users();
+                    while (reader.Read())
+                    {
+                        u.ID = reader.GetInt32(0);
+                        u.name = reader.GetString(1);
+                        u.surname = reader.GetString(2);
+                        u.userName = reader.GetString(3);
+                        u.eMail = reader.GetString(4);
+                        u.password = reader.GetString(5);
+                        u.dateOfBirth = reader.GetDateTime(6);
+                        u.dateBirthStr = reader.GetDateTime(6).ToShortDateString();
+                        u.image = !reader.IsDBNull(7) ? reader.GetString(4) : "none.png";
+                        u.memberStatus = reader.GetString(8);
+                        u.dateOfregistration = reader.GetDateTime(9);
+                        u.dateRegistrationStr = reader.GetDateTime(9).ToShortDateString();
+                        u.status = reader.GetBoolean(10);
+                    }
+                    return u;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         public Complaints bringUserComplaint(int id)
         {
             try

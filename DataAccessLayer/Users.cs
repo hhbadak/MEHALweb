@@ -17,7 +17,8 @@ namespace DataAccessLayer
         public DateTime dateOfBirth { get; set; }
         public string dateBirthStr { get; set; }
         public string image { get; set; }
-        public byte memberStatus { get; set; }
+        public int memberStatus_ID { get; set; }
+        public string memberStatus { get; set; }
         public DateTime dateOfregistration { get; set; }
         public string dateRegistrationStr { get; set; }
         public bool status { get; set; }

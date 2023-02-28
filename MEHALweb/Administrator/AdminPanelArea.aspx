@@ -26,6 +26,7 @@
                         <th>Şikayetçi Kullanıcı</th>
                         <th>Şikayet Sebebi</th>
                         <th>Şikayet Tarihi</th>
+                        <th>Şikayet Saati</th>
                         <th>Seçenekler</th>
                     </tr>
                     <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -37,7 +38,8 @@
                     <td><%#Eval("userName") %></td>
                     <td><%#Eval("theComplainingUser") %></td>
                     <td><%#Eval("subjects") %></td>
-                    <td><%#Eval("date") %></td>
+                    <td><%#Eval("date","{0:dd/MM/yyyy}") %></td>
+                    <td><%#Eval("time","{0:HH:mm}") %></td>
                     <td>
                         <a href="#">Profile Git</a>
                         <asp:LinkButton ID="lbtn_userPassive" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="userPassive">Hesabı Askıya Al</asp:LinkButton>
@@ -55,6 +57,7 @@
                         <th>Şikayetçi Kullanıcı</th>
                         <th>Şikayet Sebebi</th>
                         <th>Şikayet Tarihi</th>
+                        <th>Şikayet Saati</th>
                         <th>Seçenekler</th>
                     </tr>
                     <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -67,7 +70,8 @@
                     <td><%#Eval("comment") %></td>
                     <td><%#Eval("theComplainingUser") %></td>
                     <td><%#Eval("subjects") %></td>
-                    <td><%#Eval("date") %></td>
+                    <td><%#Eval("date","{0:dd/MM/yyyy}") %></td>
+                    <td><%#Eval("time","{0:HH\\:mm}") %></td>
                     <td>
                         <a href="#">Yoruma Git</a>
                         <asp:LinkButton ID="lbtn_commentDelete" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="commentDelete">Yorumu Sil</asp:LinkButton>
@@ -85,6 +89,7 @@
                         <th>Şikayetçi Kullanıcı</th>
                         <th>Şikayet Sebebi</th>
                         <th>Şikayet Tarihi</th>
+                        <th>Şikayet Saati</th>
                         <th>Seçenekler</th>
                     </tr>
                     <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -97,7 +102,8 @@
                     <td><%#Eval("sharing") %></td>
                     <td><%#Eval("theComplainingUser") %></td>
                     <td><%#Eval("subjects") %></td>
-                    <td><%#Eval("date") %></td>
+                    <td><%#Eval("date","{0:dd/MM/yyyy}") %></td>
+                    <td><%#Eval("time","{0:HH:mm}") %></td>
                     <td>
                         <a href="#">Paylaşıma Git</a>
                         <asp:LinkButton ID="lbtn_sharingDelete" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="sharingDelete">Paylaşımı Sil</asp:LinkButton>

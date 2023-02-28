@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administrator\AdminLoginPage.aspx" />
     <Content Include="Administrator\AdminPanelArea.aspx" />
     <Content Include="Administrator\Assets\CSS\AdminPanel.css" />
     <Content Include="Administrator\Assets\CSS\fontawesome\css\all.css" />
@@ -2125,10 +2126,18 @@
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\z.svg" />
+    <Content Include="Images\LOGO\MEHAL.jpg" />
     <Content Include="Images\LOGO\MEHAL.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator\AdminLoginPage.aspx.cs">
+      <DependentUpon>AdminLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\AdminLoginPage.aspx.designer.cs">
+      <DependentUpon>AdminLoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrator\AdminPanelArea.aspx.cs">
       <DependentUpon>AdminPanelArea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
