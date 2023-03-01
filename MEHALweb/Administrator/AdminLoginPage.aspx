@@ -7,6 +7,7 @@
     <title>Administrator LOGIN</title>
     <link href="Assets/CSS/AdminPanel.css" rel="stylesheet" />
     <link href="Assets/CSS/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server" style="height: 100%">

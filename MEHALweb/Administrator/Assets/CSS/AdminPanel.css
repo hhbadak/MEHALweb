@@ -34,40 +34,40 @@ body {
     background-color: #253C59;
 }
 
-    .header .headerTitle {
-        width: 85%;
-        height: 100%;
-        float: left;
+.headerTitle {
+    width: 85%;
+    height: 100%;
+    float: left;
+}
+
+    .headerTitle h1 {
+        color: #D9B70D;
+        text-align: center;
+        margin-top: 10px;
     }
 
-        .header .headerTitle h1 {
-            color: #D9B70D;
-            text-align: center;
-            margin-top: 10px;
-        }
+.headerUserControl {
+    float: right;
+    width: 15%;
+    height: 100%;
+}
 
-    .header .headerUserControl {
+    .headerUserControl a {
+        text-decoration: none;
+        color: #D9B70D;
+        display: block;
+        width: 110px;
+        height: 20px;
+        font-size: larger;
         float: right;
-        width: 15%;
-        height: 100%;
+        margin-top: 17px;
     }
 
-        .header .headerUserControl a {
-            text-decoration: none;
-            color: #D9B70D;
-            display: block;
-            width: 110px;
-            height: 20px;
-            font-size: larger;
-            float: right;
-            margin-top: 17px;
-        }
-
-        .header .headerUserControl span {
-            color: #D9B70D;
-            margin-top: 20px;
-            display: inline-block;
-        }
+    .headerUserControl span {
+        color: #D9B70D;
+        margin-top: 20px;
+        display: inline-block;
+    }
 
 .fix {
     width: 50%;
@@ -91,18 +91,18 @@ body {
     border-radius: 10% / 50%;
 }
 
-    .sidebar .sidebarTitle {
-        width: 85%;
-        height: 10%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.sidebarTitle {
+    width: 85%;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-        .sidebar .sidebarTitle h4 {
-            color: #D9B70D;
-            text-align: center;
-            margin-top: 10px;
-        }
+    .sidebarTitle h4 {
+        color: #D9B70D;
+        text-align: center;
+        margin-top: 10px;
+    }
 
 .buttons {
     height: 60%;
@@ -160,58 +160,58 @@ body {
     width: 100%;
 }
 
-    .container .loginPage {
+.loginPage {
+    height: 100%;
+    width: 70%;
+    opacity: .8;
+    float: right;
+}
+
+    .loginPage img {
+        width: 100%;
         height: 100%;
-        width: 70%;
-        opacity: .8;
-        float: right;
     }
 
-        .container .loginPage img {
-            width: 100%;
-            height: 100%;
-        }
+.textTitle {
+    width: 30%;
+    padding-top: 50px;
+}
 
-    .container .textTitle {
-        width: 30%;
-        padding-top: 50px;
-    }
-
-        .container .textTitle h2 {
-            text-align: center;
-            color: #253C59;
-        }
-
-    .container .loginBox {
-        width: 25%;
-        height: 40%;
+    .textTitle h2 {
         text-align: center;
-        float: left;
-        margin-left: 3%;
-        margin-top: 60px;
-        padding-top: 50px;
+        color: #253C59;
     }
 
-        .container .loginBox .loginLogo {
-            width: 25%;
-            height: 30%;
-        }
+.loginBox {
+    width: 25%;
+    height: 40%;
+    text-align: center;
+    float: left;
+    margin-left: 3%;
+    margin-top: 60px;
+    padding-top: 50px;
+}
 
-            .container .loginBox .loginLogo i {
-                width: 100%;
-                height: 20%;
-                margin-left: 150%;
-                font-size: 60pt;
-            }
+.loginLogo {
+    width: 25%;
+    height: 30%;
+}
 
-        .container .loginBox .inputBox {
-            height: 30px;
-            width: 95%;
-            margin-top: 10px;
-            padding: 5px;
-            border-radius: 5px;
-            opacity: 0.9;
-        }
+    .loginLogo i {
+        width: 100%;
+        height: 20%;
+        margin-left: 150%;
+        font-size: 60pt;
+    }
+
+.inputBox {
+    height: 30px;
+    width: 95%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.9;
+}
 
 .loginButton {
     text-align: center;
