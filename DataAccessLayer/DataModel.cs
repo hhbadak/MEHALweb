@@ -18,55 +18,7 @@ namespace DataAccessLayer
             cmd = con.CreateCommand();
         }
 
-        #region MEMBER TRANSACTIONS
-        public Users loginAdmin(string username, string password)
-        {
-            try
-            {
-                cmd.CommandText = "SELECT COUNT(*) FROM Users WHERE MemberStatus_ID = 1 AND UserName = @uName AND Password = @password";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@uName", username);
-                cmd.Parameters.AddWithValue("password", password);
-                con.Open();
-                int number = Convert.ToInt32(cmd.ExecuteScalar());
-
-                if (number > 0)
-                {
-                    cmd.CommandText = "SELECT u.ID, u.Name, u.Surname, u.UserName, u.EMail, u.Password, u.DateOfBirth, u.Images, m.Status, u.DateOfRegistration, u.Status FROM Users AS u\r\nJOIN MemberStatus AS m ON m.ID = u.MemberStatus_ID\r\nWHERE u.UserName = @uName AND u.Password = @password";
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@uName", username);
-                    cmd.Parameters.AddWithValue("password", password);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    Users u = new Users();
-                    while (reader.Read())
-                    {
-                        u.ID = reader.GetInt32(0);
-                        u.name = reader.GetString(1);
-                        u.surname = reader.GetString(2);
-                        u.userName = reader.GetString(3);
-                        u.eMail = reader.GetString(4);
-                        u.password = reader.GetString(5);
-                        u.dateOfBirth = reader.GetDateTime(6);
-                        u.dateBirthStr = reader.GetDateTime(6).ToShortDateString();
-                        u.image = !reader.IsDBNull(7) ? reader.GetString(4) : "none.png";
-                        u.memberStatus = reader.GetString(8);
-                        u.dateOfregistration = reader.GetDateTime(9);
-                        u.dateRegistrationStr = reader.GetDateTime(9).ToShortDateString();
-                        u.status = reader.GetBoolean(10);
-                    }
-                    return u;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+        #region COMPLAINT METHODS
         public Complaints bringUserComplaint(int id)
         {
             try
@@ -154,6 +106,9 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        #endregion
+
+        #region LIST METHODS
         public List<Complaints> listUserComplaint()
         {
             try
@@ -240,6 +195,9 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        #endregion
+
+        #region DELETION METHODS
         public bool accountRestriction(int id)
         {
             try
@@ -326,7 +284,80 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        #endregion
 
+        #region MEMBER TRANSACTIONS
+        public Users loginAdmin(string username, string password)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT COUNT(*) FROM Users WHERE MemberStatus_ID = 1 AND UserName = @uName AND Password = @password";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@uName", username);
+                cmd.Parameters.AddWithValue("password", password);
+                con.Open();
+                int number = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (number > 0)
+                {
+                    cmd.CommandText = "SELECT u.ID, u.Name, u.Surname, u.UserName, u.EMail, u.Password, u.DateOfBirth, u.Images, m.Status, u.DateOfRegistration, u.Status FROM Users AS u\r\nJOIN MemberStatus AS m ON m.ID = u.MemberStatus_ID\r\nWHERE u.UserName = @uName AND u.Password = @password";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@uName", username);
+                    cmd.Parameters.AddWithValue("password", password);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    Users u = new Users();
+                    while (reader.Read())
+                    {
+                        u.ID = reader.GetInt32(0);
+                        u.name = reader.GetString(1);
+                        u.surname = reader.GetString(2);
+                        u.userName = reader.GetString(3);
+                        u.eMail = reader.GetString(4);
+                        u.password = reader.GetString(5);
+                        u.dateOfBirth = reader.GetDateTime(6);
+                        u.dateBirthStr = reader.GetDateTime(6).ToShortDateString();
+                        u.image = !reader.IsDBNull(7) ? reader.GetString(4) : "none.png";
+                        u.memberStatus = reader.GetString(8);
+                        u.dateOfregistration = reader.GetDateTime(9);
+                        u.dateRegistrationStr = reader.GetDateTime(9).ToShortDateString();
+                        u.status = reader.GetBoolean(10);
+                    }
+                    return u;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+        public bool memberRegistration(Users user)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Users(Name, Surname, UserName, EMail, Password, DateOfBirth, MemberStatus_ID, DateOfRegistration, Status) VALUES(@name, @sName, @userName, @mail, @password, @birthDay, 2, @registrationDate, 1)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@name", user.name);
+                cmd.Parameters.AddWithValue("@sName", user.surname);
+                cmd.Parameters.AddWithValue("@userName", user.userName);
+                cmd.Parameters.AddWithValue("@mail", user.eMail);
+                cmd.Parameters.AddWithValue("@password", user.password);
+                cmd.Parameters.AddWithValue("@birthDay", user.dateOfBirth);
+                cmd.Parameters.AddWithValue("@registrationDate", user.dateOfregistration);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         #endregion
 
     }

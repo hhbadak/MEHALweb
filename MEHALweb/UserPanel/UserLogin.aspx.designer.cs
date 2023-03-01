@@ -24,15 +24,6 @@ namespace MEHALweb.UserPanel
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lbtn_userLoginPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_userLoginPage;
-
-        /// <summary>
         /// lbtn_userRegisterPage control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace MEHALweb.UserPanel
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtn_userRegisterPage;
+
+        /// <summary>
+        /// lbtn_userLoginPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_userLoginPage;
 
         /// <summary>
         /// pnl_loginBox control.

@@ -21,8 +21,8 @@
                     <i class="fa-brands fa-meetup"></i>
                 </div>
                 <div class="selection">
+                    <asp:LinkButton ID="lbtn_userRegisterPage" runat="server" OnClick="lbtn_userRegisterPage_Click">Kayıt Ol</asp:LinkButton>
                     <asp:LinkButton ID="lbtn_userLoginPage" runat="server" OnClick="lbtn_userLoginPage_Click">Giriş Yap</asp:LinkButton>
-                    <asp:LinkButton ID="lbtn_userRegisterPage" runat="server" OnClick="lbtn_userRegisterPage_Click">Çıkış Yap</asp:LinkButton>
                 </div>
                 <asp:Panel ID="pnl_loginBox" runat="server" Visible="true">
                     <asp:Panel ID="pnl_error" runat="server" CssClass="messageBox" Visible="false">

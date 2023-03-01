@@ -161,7 +161,7 @@ body {
 }
 
 .loginPage {
-    height: 100%;
+    height: 986px;
     width: 70%;
     opacity: .8;
     float: right;
@@ -188,8 +188,8 @@ body {
     text-align: center;
     float: left;
     margin-left: 3%;
-    margin-top: 60px;
-    padding-top: 50px;
+    margin-top: 5%;
+    position: absolute;
 }
 
 .loginLogo {
