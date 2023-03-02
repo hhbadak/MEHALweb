@@ -71,3 +71,98 @@ body {
         width: 100%;
         display: inline-flex;
     }
+
+.userTab {
+    float: right;
+    width: 4%;
+    height: 60px;
+    border-radius: 100px;
+    border: 1px solid black;
+    margin-top: .3%;
+    margin-right: 2%;
+}
+
+.dropDown {
+    position: relative;
+    cursor: pointer;
+}
+
+    .dropDown > a {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        height: 72px;
+    }
+
+        .dropDown > a > img {
+            width: 100%;
+            height: 90%;
+            border-radius: 50px;
+            margin-top: -16%;
+        }
+
+    .dropDown:hover .menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.menu > a {
+    font-size: 14px;
+    padding: 12px 20px;
+}
+
+    .menu > a:hover {
+        background: #f5f5f5;
+    }
+
+.menu {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    display: grid;
+    width: 180px;
+    padding: 8px 0;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 40px 40px rgb(0 0 0 / 6%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+}
+
+    .menu::before {
+        content: "";
+        background: inherit;
+        border-top: 1px solid #e1e1e1;
+        border-right: 1px solid #e1e1e1;
+        position: absolute;
+        top: -7px;
+        right: 22px;
+        width: 12px;
+        height: 12px;
+        offset-rotate: -45deg;
+    }
+/* Sidebar */
+.userSidebar {
+    width: 10%;
+    height: 250px;
+    float: left;
+    margin: 10% 0 0 1%;
+    display: grid;
+    padding: 2% 0 0 2%;
+    border-radius: 50px;
+}
+
+    .userSidebar a {
+        display: grid;
+        font-size: 25pt;
+        text-decoration: none;
+        color: white;
+    }
+
+.sidebarLogo {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
