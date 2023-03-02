@@ -40,37 +40,38 @@
                         </asp:LinkButton>
                     </div>
                 </asp:Panel>
-            </div>
-            <div class="registerBox">
-                <asp:Panel ID="pnl_registerBox" runat="server" Visible="false">
-                    <asp:Panel ID="Panel1" runat="server" CssClass="messageBox" Visible="false">
-                        <asp:Label ID="Label1" runat="server">Hatalı</asp:Label>
-                    </asp:Panel>
-                    <div>
-                        <asp:TextBox ID="tb_registerName" runat="server" CssClass="inputBox" placeholder="Adınızı Giriniz"></asp:TextBox>
-                    </div>
-                    <div>
-                        <asp:TextBox ID="tb_registerSurname" runat="server" CssClass="inputBox" placeholder="Soyadınızı Giriniz"></asp:TextBox>
-                    </div>
-                    <div>
-                        <asp:TextBox ID="tb_registerUserName" runat="server" CssClass="inputBox" placeholder="Kullanıcı Adı Giriniz"></asp:TextBox>
-                    </div>
-                    <div>
-                        <asp:TextBox ID="tb_registerMail" runat="server" CssClass="inputBox" placeholder="E-Mail Giriniz" TextMode="Email"></asp:TextBox>
-                    </div>
-                    <div>
-                        <asp:TextBox ID="tb_registerPassword" runat="server" CssClass="inputBox" placeholder="Şifrenizi Giriniz" TextMode="Password"></asp:TextBox>
-                    </div>
-                    <div>
-                        <asp:TextBox ID="tb_registerBirthDay" runat="server" CssClass="inputBox" placeholder="Doğum Tarihiniz" TextMode="Date"></asp:TextBox>
-                    </div>
-                    <div>
-                        <asp:LinkButton ID="lbtn_registerUser" runat="server" CssClass="loginButton" onmouseenter="enter()" onmouseleave="leave()" OnClick="lbtn_registerUser_Click">Giriş Yap
+                <div class="registerBox">
+                    <asp:Panel ID="pnl_registerBox" runat="server" Visible="false">
+                        <asp:Panel ID="Panel1" runat="server" CssClass="messageBox" Visible="false">
+                            <asp:Label ID="Label1" runat="server">Hatalı</asp:Label>
+                        </asp:Panel>
+                        <div>
+                            <asp:TextBox ID="tb_registerName" runat="server" CssClass="inputBox" placeholder="Adınızı Giriniz"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:TextBox ID="tb_registerSurname" runat="server" CssClass="inputBox" placeholder="Soyadınızı Giriniz"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:TextBox ID="tb_registerUserName" runat="server" CssClass="inputBox" placeholder="Kullanıcı Adı Giriniz"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:TextBox ID="tb_registerMail" runat="server" CssClass="inputBox" placeholder="E-Mail Giriniz" TextMode="Email"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:TextBox ID="tb_registerPassword" runat="server" CssClass="inputBox" placeholder="Şifrenizi Giriniz" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:TextBox ID="tb_registerBirthDay" runat="server" CssClass="inputBox" placeholder="Doğum Tarihiniz" TextMode="Date"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:LinkButton ID="lbtn_registerUser" runat="server" CssClass="loginButton" onmouseenter="enter()" onmouseleave="leave()" OnClick="lbtn_registerUser_Click">Giriş Yap
                          <i class='fa-sharp fa-solid fa-door-open'></i>
-                        </asp:LinkButton>
-                    </div>
-                </asp:Panel>
+                            </asp:LinkButton>
+                        </div>
+                    </asp:Panel>
+                </div>
             </div>
+
             <script>
                 function enter() {
                     document.getElementById("lbtn_login").innerHTML = " Giriş Yap <i class='fa-sharp fa-solid fa-door-closed'></i>";

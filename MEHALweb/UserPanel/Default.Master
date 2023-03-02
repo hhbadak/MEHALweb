@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="MEHALweb.UserPanel.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MEHAL ~ Anasayfa</title>
+    <link href="Assets/CSS/userPanel.css" rel="stylesheet" />
+    <link href="../Administrator/Assets/CSS/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="height: 100%">
+        <header class="header navyBlue">
+            <div class="defaultLogo">
+                <a href="Default.aspx">
+                    <img src="../Images/LOGO/MEHAL.png" />
+                </a>
+            </div>
+            <div class="userTab">
+                <%--BURADAYIM--%>
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

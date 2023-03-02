@@ -18,7 +18,33 @@ namespace MEHALweb.UserPanel
 
         protected void lbtn_login_Click(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(tb_loginUserName.Text.Trim()) && !string.IsNullOrEmpty(tb_loginPassword.Text.Trim()))
+            {
+                Users u = dm.loginUser(tb_loginUserName.Text, tb_loginPassword.Text);
+                if (u != null)
+                {
+                    if (u.status)
+                    {
+                        Session["user"] = u;
+                        Response.Redirect("Default.aspx");
+                    }
+                    else
+                    {
+                        pnl_error.Visible = true;
+                        lbl_error.Text = "Kullanıcı Hesabı Yok";
+                    }
+                }
+                else
+                {
+                    pnl_error.Visible = true;
+                    lbl_error.Text = "Kullanıcı Hesabı Bulunamadı";
+                }
+            }
+            else
+            {
+                pnl_error.Visible = true;
+                lbl_error.Text = "Kullanıcı Adı veya Şifre Boş Olamaz";
+            }
         }
 
         protected void lbtn_registerUser_Click(object sender, EventArgs e)
