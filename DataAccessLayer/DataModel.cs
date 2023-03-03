@@ -408,5 +408,29 @@ namespace DataAccessLayer
         }
         #endregion
 
+        #region SHARING METHODS
+        public bool addShare(Sharing s)
+        {
+            SharingImages si = new SharingImages();
+            try
+            {
+                cmd.CommandText = "INSERT INTO Sharing(User_ID, NumberOfLikes, Content, Date, Time, Status) VALUES (@userID, 0, @content, @date, @time, 1) SELECT @@IDENTITY\r\nINSERT INTO SharingImages(Sharing_ID,ImagePath) VALUES(@@IDENTITY, @imagePath)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@userID", s.user_ID);
+                cmd.Parameters.AddWithValue("@content", s.content);
+                cmd.Parameters.AddWithValue("@date", s.date);
+                cmd.Parameters.AddWithValue("@time", s.time);
+                cmd.Parameters.AddWithValue("@imagePath", si.imagePath);
+                con.Open();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+
+        #endregion
     }
 }

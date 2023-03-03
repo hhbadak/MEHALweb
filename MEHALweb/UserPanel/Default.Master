@@ -21,11 +21,11 @@
             </div>
             <div class="userTab">
                 <div class="dropDown">
-                    <a href="#">
+                    <a href="UserPanel.aspx">
                         <img src="../Images/LOGO/MEHAL.jpg" />
                     </a>
                     <div class="menu">
-                        <a href="#">Profil</a>
+                        <a href="UserPanel.aspx">Profil</a>
                         <a href="#">Ayarlar</a>
                         <a href="#">Çıkış</a>
                     </div>
@@ -34,16 +34,16 @@
         </header>
         <aside class="userSidebar navyBlue">
             <div class="sidebarLogo">
-                <a href="#"><i class="fa-solid fa-house"></i></a>
+                <a href="Default.aspx"><i class="fa-solid fa-house"></i></a>
             </div>
             <div class="sidebarLogo">
-                <a href="#"><i class="fa-solid fa-message"></i></a>
+                <a href="MessagesPage.aspx"><i class="fa-solid fa-message"></i></a>
             </div>
             <div class="sidebarLogo">
                 <a href="#"><i class="fa-solid fa-bell"></i></a>
             </div>
             <div class="sidebarLogo">
-                <a href="#"><i class="fa-solid fa-earth-europe"></i></a>
+                <a href="DiscoverPage.aspx"><i class="fa-solid fa-earth-europe"></i></a>
             </div>
         </aside>
         <div>

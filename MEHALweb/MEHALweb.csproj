@@ -2128,9 +2128,13 @@
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\z.svg" />
     <Content Include="Images\LOGO\MEHAL.jpg" />
     <Content Include="Images\LOGO\MEHAL.png" />
+    <Content Include="UserPanel\Assets\CSS\DarkThemes.css" />
     <Content Include="UserPanel\Assets\CSS\userPanel.css" />
     <Content Include="UserPanel\Default.aspx" />
+    <Content Include="UserPanel\DiscoverPage.aspx" />
+    <Content Include="UserPanel\MessagesPage.aspx" />
     <Content Include="UserPanel\UserLogin.aspx" />
+    <Content Include="UserPanel\UserPanel.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2170,6 +2174,20 @@
     <Compile Include="UserPanel\Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\DiscoverPage.aspx.cs">
+      <DependentUpon>DiscoverPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPanel\DiscoverPage.aspx.designer.cs">
+      <DependentUpon>DiscoverPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\MessagesPage.aspx.cs">
+      <DependentUpon>MessagesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPanel\MessagesPage.aspx.designer.cs">
+      <DependentUpon>MessagesPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2177,12 +2195,12 @@
     <Compile Include="UserPanel\UserLogin.aspx.designer.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserPanel\UserPanel.Master.cs">
-      <DependentUpon>UserPanel.Master</DependentUpon>
+    <Compile Include="UserPanel\UserPanel.aspx.cs">
+      <DependentUpon>UserPanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserPanel\UserPanel.Master.designer.cs">
-      <DependentUpon>UserPanel.Master</DependentUpon>
+    <Compile Include="UserPanel\UserPanel.aspx.designer.cs">
+      <DependentUpon>UserPanel.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2241,7 +2259,6 @@
     <Content Include="Administrator\Assets\CSS\fontawesome\webfonts\fa-v4compatibility.woff2" />
     <Content Include="Administrator\AdminPanelArea.Master" />
     <None Include="packages.config" />
-    <Content Include="UserPanel\UserPanel.Master" />
     <Content Include="UserPanel\Default.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

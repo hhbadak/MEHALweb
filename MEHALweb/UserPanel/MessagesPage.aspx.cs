@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MEHALweb.UserPanel
 {
-    public partial class UserPanel : System.Web.UI.MasterPage
+    public partial class MessagesPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
