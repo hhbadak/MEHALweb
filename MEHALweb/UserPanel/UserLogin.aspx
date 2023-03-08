@@ -12,7 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server" style="height: 100%">
-        <div class="container">
+        <div class="userContainer">
             <div class="loginPage">
                 <img src="../Images/LOGO/MEHAL.jpg" />
             </div>

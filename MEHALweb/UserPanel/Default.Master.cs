@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,16 @@ namespace MEHALweb.UserPanel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null)
+            {
+                Users u = (Users)Session["user"];
+                lbl_userControl.Text = u.userName;
+                img_pictureComing.ImageUrl = u.image;
+            }
+            else
+            {
+                Response.Redirect("UserLogin.aspx");
+            }
         }
     }
 }

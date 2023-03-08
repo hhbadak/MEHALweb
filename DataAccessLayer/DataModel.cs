@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -409,6 +410,24 @@ namespace DataAccessLayer
         #endregion
 
         #region SHARING METHODS
+        public bool addProfilPhoto(Users u)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Users SET Images = @image WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", u.ID);
+                cmd.Parameters.AddWithValue("@image", u.image);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         public bool addShare(Sharing s)
         {
             SharingImages si = new SharingImages();

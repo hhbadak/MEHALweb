@@ -37,13 +37,18 @@ namespace MEHALweb.UserPanel
                     string extension = fi.Extension;
                     string name = Guid.NewGuid().ToString();
                     si.imagePath = extension + name;
-                    fu_picture.SaveAs(Server.MapPath("~/Images SharingPhotografy /" + name + extension));
+                    fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + name + extension));
                     if (dm.addShare(s))
                     {
                         tb_sharingArea.Text = "";
                     }
                 }
             }
+        }
+
+        protected void lv_postList_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+
         }
     }
 }

@@ -9,6 +9,16 @@
             <asp:TextBox ID="tb_sharingArea" runat="server" CssClass="shareBox" Text="   Bugün neler öğrendin?"></asp:TextBox>
             <asp:FileUpload ID="fu_picture" runat="server" CssClass="fileLayout"></asp:FileUpload>
         </div>
-        <div class="postsArea"></div>
+        <div class="postsArea">
+            <asp:ListView ID="lv_postList" runat="server" OnItemCommand="lv_postList_ItemCommand">
+                <LayoutTemplate>
+                    <table>
+                        <thead>
+                            <td></td>
+                        </thead>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
+        </div>
     </main>
 </asp:Content>
