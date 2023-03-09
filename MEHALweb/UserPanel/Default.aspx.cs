@@ -45,10 +45,5 @@ namespace MEHALweb.UserPanel
                 }
             }
         }
-
-        protected void lv_postList_ItemCommand(object sender, ListViewCommandEventArgs e)
-        {
-
-        }
     }
 }

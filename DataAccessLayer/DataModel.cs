@@ -449,7 +449,34 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-
+        public List<Sharing> sharingList()
+        {
+            List<Sharing> sharings = new List<Sharing>();
+            try
+            {
+                cmd.CommandText = "SELECT u.UserName, s.NumberOfLikes, s.Content, s.Date \r\nFROM Sharing AS s\r\nJOIN Users AS u ON u.ID = s.User_ID\r\nWHERE s.Status = 1";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Sharing s = new Sharing();
+                    Users u = new Users();
+                    s.user = reader.GetString(0);
+                    s.numberOfLikes = reader.GetInt32(1);
+                    s.content = reader.GetString(2);
+                    s.date = reader.GetDateTime(3);
+                    s.dateStr = reader.GetDateTime(3).ToShortDateString();
+                    sharings.Add(s);
+                }
+                return sharings;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         #endregion
     }
 }

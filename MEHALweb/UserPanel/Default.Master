@@ -47,6 +47,18 @@
                 <a href="DiscoverPage.aspx"><i class="fa-solid fa-earth-europe"></i></a>
             </div>
         </aside>
+        <div class="postsArea">
+            <asp:Repeater ID="rp_postList" runat="server">
+                <ItemTemplate>
+                    <div class="sharingStyle">
+                        <h5><%#Eval("user") %></h5>
+                        <label><%#Eval("numberOfLikes") %></label>
+                        <p><%#Eval("content") %></p>
+                        <label><%#Eval("date") %></label>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

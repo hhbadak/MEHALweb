@@ -219,4 +219,14 @@ body {
     min-height: 1000px;
     width: 70%;
     margin: 10% auto 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.sharingStyle {
+    border: 1px solid #99B4BF;
+    width: 60%;
+    margin: 1% auto 1% auto;
 }
