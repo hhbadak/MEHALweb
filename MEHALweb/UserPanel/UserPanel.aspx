@@ -1,20 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserPanel.aspx.cs" Inherits="MEHALweb.UserPanel.UserPanel" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPanel/Default.Master" AutoEventWireup="true" CodeBehind="UserPanel.aspx.cs" Inherits="MEHALweb.UserPanel.UserPanel" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:FileUpload ID="fu_picture" runat="server" CssClass="fileLayout"></asp:FileUpload>
-            <asp:LinkButton ID="lbtn_share" runat="server" OnClick="lbtn_share_Click">Yolla</asp:LinkButton>
-            <asp:Panel ID="pnl_error" runat="server" CssClass="messageBox" Visible="false">
-                <asp:Label ID="lbl_error" runat="server">Deneme's</asp:Label>
-            </asp:Panel>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="userProfileStatic">
+        <div class="bannerPhoto">
         </div>
-    </form>
-</body>
-</html>
+        <div class="userProfilePhoto"></div>
+        <div class="options">
+        </div>
+        <div class="userDescription"></div>
+    </div>
+    <div class="headerUserProfil">
+        <asp:Repeater ID="rp_userProfil" runat="server">
+            <ItemTemplate>
+                <div class="userProfileSharing">
+                    <h5><%#Eval("user") %></h5>
+                    <label><%#Eval("numberOfLikes") %></label>
+                    <p><%#Eval("content") %></p>
+                    <img class="sharingPhotoStyle" src="~/Images/SharingPhotografy/<%# Eval("imagePath") %>" />
+                    <label><%#Eval("date") %></label>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+</asp:Content>

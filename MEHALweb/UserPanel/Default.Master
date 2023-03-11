@@ -22,7 +22,7 @@
             <div class="userTab">
                 <div class="dropDown">
                     <a href="UserPanel.aspx">
-                        <asp:Image ID="img_pictureComing" runat="server" ImageUrl="~/Images/ProfilPhotografy/" />
+                        <asp:Image ID="img_pictureComing" runat="server"  />
                         <asp:Label ID="lbl_userControl" runat="server"></asp:Label>
                     </a>
                     <div class="menu">
@@ -47,18 +47,6 @@
                 <a href="DiscoverPage.aspx"><i class="fa-solid fa-earth-europe"></i></a>
             </div>
         </aside>
-        <div class="postsArea">
-            <asp:Repeater ID="rp_postList" runat="server">
-                <ItemTemplate>
-                    <div class="sharingStyle">
-                        <h5><%#Eval("user") %></h5>
-                        <label><%#Eval("numberOfLikes") %></label>
-                        <p><%#Eval("content") %></p>
-                        <label><%#Eval("date") %></label>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

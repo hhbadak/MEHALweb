@@ -365,7 +365,7 @@ namespace DataAccessLayer
                         u.password = reader.GetString(5);
                         u.dateOfBirth = reader.GetDateTime(6);
                         u.dateBirthStr = reader.GetDateTime(6).ToShortDateString();
-                        u.image = !reader.IsDBNull(7) ? reader.GetString(4) : "none.png";
+                        u.image = !reader.IsDBNull(7) ? reader.GetString(7) : "none.png";
                         u.memberStatus = reader.GetString(8);
                         u.dateOfregistration = reader.GetDateTime(9);
                         u.dateRegistrationStr = reader.GetDateTime(9).ToShortDateString();
@@ -428,9 +428,8 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-        public bool addShare(Sharing s)
+        public bool addShare(Sharing s, string imagePath)
         {
-            SharingImages si = new SharingImages();
             try
             {
                 cmd.CommandText = "INSERT INTO Sharing(User_ID, NumberOfLikes, Content, Date, Time, Status) VALUES (@userID, 0, @content, @date, @time, 1) SELECT @@IDENTITY\r\nINSERT INTO SharingImages(Sharing_ID,ImagePath) VALUES(@@IDENTITY, @imagePath)";
@@ -439,11 +438,12 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@content", s.content);
                 cmd.Parameters.AddWithValue("@date", s.date);
                 cmd.Parameters.AddWithValue("@time", s.time);
-                cmd.Parameters.AddWithValue("@imagePath", si.imagePath);
+                cmd.Parameters.AddWithValue("@imagePath", imagePath);
                 con.Open();
+                cmd.ExecuteNonQuery();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
                 return false;
             }
@@ -454,7 +454,7 @@ namespace DataAccessLayer
             List<Sharing> sharings = new List<Sharing>();
             try
             {
-                cmd.CommandText = "SELECT u.UserName, s.NumberOfLikes, s.Content, s.Date \r\nFROM Sharing AS s\r\nJOIN Users AS u ON u.ID = s.User_ID\r\nWHERE s.Status = 1";
+                cmd.CommandText = "SELECT u.UserName, s.NumberOfLikes, s.Content, si.ImagePath, s.Date \r\nFROM Sharing AS s\r\nJOIN Users AS u ON u.ID = s.User_ID\r\nJOIN SharingImages AS si ON si.Sharing_ID = s.ID\r\nWHERE s.Status = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -465,8 +465,9 @@ namespace DataAccessLayer
                     s.user = reader.GetString(0);
                     s.numberOfLikes = reader.GetInt32(1);
                     s.content = reader.GetString(2);
-                    s.date = reader.GetDateTime(3);
-                    s.dateStr = reader.GetDateTime(3).ToShortDateString();
+                    s.imagePath = reader.GetString(3);
+                    s.date = reader.GetDateTime(4);
+                    s.dateStr = reader.GetDateTime(4).ToShortDateString();
                     sharings.Add(s);
                 }
                 return sharings;

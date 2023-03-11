@@ -14,7 +14,8 @@ namespace MEHALweb.UserPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            rp_postList.DataSource = dm.sharingList();
+            rp_postList.DataBind();
         }
 
         protected void lbtn_share_Click(object sender, EventArgs e)
@@ -36,9 +37,9 @@ namespace MEHALweb.UserPanel
                 {
                     string extension = fi.Extension;
                     string name = Guid.NewGuid().ToString();
-                    si.imagePath = extension + name;
+                    si.imagePath = name + extension;
                     fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + name + extension));
-                    if (dm.addShare(s))
+                    if (dm.addShare(s, si.imagePath))
                     {
                         tb_sharingArea.Text = "";
                     }

@@ -230,3 +230,301 @@ body {
     width: 60%;
     margin: 1% auto 1% auto;
 }
+
+.bannerPhoto {
+    width: 60%;
+    height: 15%;
+    border: 1px solid black;
+    border: 1px solid black;
+}
+
+*, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+/* Color Theme */
+.navyBlue {
+    background-color: #2D4B73;
+}
+
+.darkNavyBlue {
+    background-color: #253C59;
+}
+
+.gray {
+    background-color: #99B4BF;
+}
+
+.yellow {
+    background-color: #D9B70D;
+}
+
+.darkYellow {
+    background-color: #BF8D30;
+}
+/* login and register */
+.selection {
+    width: 50%;
+    height: 10%;
+    float: right;
+    background-color: #2D4B73;
+    margin-top: 5%;
+    margin-right: 3px;
+    padding-top: 1%;
+    border-radius: 30px 0 0 5px;
+}
+
+    .selection a {
+        text-decoration: none;
+        padding: 0px 5px 5px 0px;
+        background-color: #D9B70D;
+        color: #2D4B73;
+        border-radius: 10px 0 10px 0;
+        float: right;
+    }
+
+.registerBox {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+/* Header */
+.header {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+}
+
+.defaultLogo {
+    width: 6%;
+    height: 80%;
+    margin-left: 2%;
+    padding-top: .6%;
+    float: left;
+}
+
+    .defaultLogo a {
+        height: 100%;
+        width: 100%;
+        display: inline-flex;
+    }
+
+.userTab {
+    float: right;
+    width: 4%;
+    height: 60px;
+    border-radius: 100px;
+    border: 1px solid black;
+    margin-top: .3%;
+    margin-right: 2%;
+}
+
+.dropDown {
+    position: relative;
+    cursor: pointer;
+}
+
+    .dropDown > a {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        height: 72px;
+    }
+
+        .dropDown > a > img {
+            width: 100%;
+            height: 90%;
+            border-radius: 50px;
+            margin-top: -16%;
+        }
+
+    .dropDown:hover .menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.menu > a {
+    font-size: 14px;
+    padding: 12px 20px;
+}
+
+    .menu > a:hover {
+        background: #f5f5f5;
+    }
+
+.menu {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    display: grid;
+    width: 180px;
+    padding: 8px 0;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 40px 40px rgb(0 0 0 / 6%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+}
+
+    .menu::before {
+        content: "";
+        background: inherit;
+        border-top: 1px solid #e1e1e1;
+        border-right: 1px solid #e1e1e1;
+        position: absolute;
+        top: -7px;
+        right: 22px;
+        width: 12px;
+        height: 12px;
+        offset-rotate: -45deg;
+    }
+/* Sidebar */
+.userSidebar {
+    width: 10%;
+    height: 250px;
+    float: left;
+    margin: 10% 0 0 1%;
+    display: grid;
+    padding: 2% 0 0 2%;
+    border-radius: 50px;
+    position: fixed;
+}
+
+    .userSidebar a {
+        display: grid;
+        font-size: 25pt;
+        text-decoration: none;
+        color: #99B4BF;
+    }
+
+    .userSidebar title {
+        border: 2px solid black;
+        font-size: 50pt;
+    }
+
+.sidebarLogo {
+    width: 30%;
+    margin: 0 auto 0 30%;
+}
+
+.userContainer {
+    width: 100%;
+    min-height: 1200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sharingArea {
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+    .sharingArea a {
+        float: right;
+        width: 15%;
+        height: 80%;
+        color: #99B4BF;
+        background-color: #253C59;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 10px;
+        margin-right: 4%;
+        align-items: center;
+        display: grid;
+        margin-top: 10%;
+    }
+
+.shareBox {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    opacity: .5;
+    float: left;
+    margin-top: 10%;
+}
+
+.fileLayout {
+    width: 75%;
+}
+
+.postsArea {
+    min-height: 1000px;
+    width: 70%;
+    margin: 10% auto 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.sharingStyle {
+    border: 1px solid #99B4BF;
+    width: 60%;
+    margin: 1% auto 1% auto;
+}
+
+.userProfileStatic {
+    border: 1px solid black;
+    width: 60%;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin: 3.8% auto 0 auto;
+}
+
+.bannerPhoto {
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.userProfilePhoto {
+    width: 15%;
+    height: 150px;
+    text-align: center;
+    left: 45%;
+    position: absolute;
+    margin-top: 15%;
+    border-radius: 50px;
+}
+
+.options {
+    border: 1px solid black;
+    width: 25%;
+    height: 50px;
+    position: absolute;
+    left: 18%;
+    margin-top: 22%;
+    float: left;
+}
+
+.userDescription {
+    border: 1px solid black;
+    width: 38%;
+    height: 30%;
+    float: right;
+    margin-top: 22%;
+}
+
+.headerUserProfil {
+    border: 1px solid black;
+    width: 60%;
+    min-height: 600px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin: 25% auto 0 auto;
+}

@@ -13,13 +13,11 @@ namespace MEHALweb.UserPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            rp_postList.DataSource = dm.sharingList();
-            rp_postList.DataBind();
             if (Session["user"] != null)
             {
                 Users u = (Users)Session["user"];
                 lbl_userControl.Text = u.userName;
-                img_pictureComing.ImageUrl = u.image;
+                img_pictureComing.ImageUrl = "~/Images/ProfilPhotografy/"+ u.image;
             }
             else
             {

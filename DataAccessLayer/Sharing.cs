@@ -14,6 +14,7 @@ namespace DataAccessLayer
         public string user { get; set; }
         public int numberOfLikes { get; set; }
         public string content { get; set; }
+        public string imagePath { get; set; }
         public DateTime date { get; set; }
         public DateTime time { get; set; }
         public string dateStr { get; set; }
