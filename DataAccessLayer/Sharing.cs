@@ -20,5 +20,6 @@ namespace DataAccessLayer
         public string dateStr { get; set; }
         public string timeStr { get; set; }
         public bool status { get; set; }
+        public string display { get; set; }
     }
 }

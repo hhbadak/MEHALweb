@@ -428,17 +428,16 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-        public bool addShare(Sharing s, string imagePath)
+        public bool addShare(Sharing s)
         {
             try
             {
-                cmd.CommandText = "INSERT INTO Sharing(User_ID, NumberOfLikes, Content, Date, Time, Status) VALUES (@userID, 0, @content, @date, @time, 1) SELECT @@IDENTITY\r\nINSERT INTO SharingImages(Sharing_ID,ImagePath) VALUES(@@IDENTITY, @imagePath)";
+                cmd.CommandText = "INSERT INTO Sharing(User_ID, NumberOfLikes, Content, Image, Date, Status) VALUES (@userID, 0, @content, @image, @date, 1)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@userID", s.user_ID);
                 cmd.Parameters.AddWithValue("@content", s.content);
+                cmd.Parameters.AddWithValue("@image", s.imagePath);
                 cmd.Parameters.AddWithValue("@date", s.date);
-                cmd.Parameters.AddWithValue("@time", s.time);
-                cmd.Parameters.AddWithValue("@imagePath", imagePath);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -454,7 +453,7 @@ namespace DataAccessLayer
             List<Sharing> sharings = new List<Sharing>();
             try
             {
-                cmd.CommandText = "SELECT u.UserName, s.NumberOfLikes, s.Content, si.ImagePath, s.Date \r\nFROM Sharing AS s\r\nJOIN Users AS u ON u.ID = s.User_ID\r\nJOIN SharingImages AS si ON si.Sharing_ID = s.ID\r\nWHERE s.Status = 1";
+                cmd.CommandText = "SELECT u.UserName, s.NumberOfLikes, s.Content, S.Image, s.Date \r\nFROM Sharing AS s\r\nJOIN Users AS u ON u.ID = s.User_ID\r\nWHERE s.Status = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -468,6 +467,7 @@ namespace DataAccessLayer
                     s.imagePath = reader.GetString(3);
                     s.date = reader.GetDateTime(4);
                     s.dateStr = reader.GetDateTime(4).ToShortDateString();
+                    s.display = reader.GetString(3) == null ? "none" : "visible";
                     sharings.Add(s);
                 }
                 return sharings;

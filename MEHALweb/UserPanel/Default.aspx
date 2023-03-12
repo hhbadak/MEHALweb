@@ -13,11 +13,16 @@
             <asp:Repeater ID="rp_postList" runat="server">
                 <ItemTemplate>
                     <div class="sharingStyle">
-                        <h5><%#Eval("user") %></h5>
-                        <label><%#Eval("numberOfLikes") %></label>
+                        <a href="UserPanel.aspx" class="userClass">
+                            <h3><%#Eval("user") %></h3>
+                        </a>
                         <p><%#Eval("content") %></p>
-                        <img class="sharingPhotoStyle" src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" />
-                        <label><%#Eval("date") %></label>
+                        <span><%#Eval("date") %></span>
+                        <img src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" style='display: <%# Eval("display")%>' />
+                        <label>Beğeni Sayısı <%#Eval("numberOfLikes") %></label>
+                        <asp:TextBox ID="tb_sharingComment" runat="server"></asp:TextBox>
+                        <asp:LinkButton CssClass="sendComment" ID="lbtn_sharingCommentSend" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="sendComment">Gönder
+                        </asp:LinkButton>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

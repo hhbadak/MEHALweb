@@ -13,8 +13,8 @@ namespace MEHALweb.UserPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            rp_userProfil.DataSource = dm.sharingList();
-            rp_userProfil.DataBind();
+            rp_postList.DataSource = dm.sharingList();
+            rp_postList.DataBind();
         }
     }
 }

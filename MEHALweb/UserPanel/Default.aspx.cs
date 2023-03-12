@@ -21,14 +21,11 @@ namespace MEHALweb.UserPanel
         protected void lbtn_share_Click(object sender, EventArgs e)
         {
             Sharing s = new Sharing();
-            SharingImages si = new SharingImages();
             Users u = (Users)Session["user"];
-            si.sharing_ID = s.ID;
             s.user_ID = u.ID;
             s.numberOfLikes = 0;
             s.content = tb_sharingArea.Text;
             s.date = DateTime.Now;
-            s.time = DateTime.Now;
             s.status = true;
             if (fu_picture.HasFile)
             {
@@ -37,13 +34,17 @@ namespace MEHALweb.UserPanel
                 {
                     string extension = fi.Extension;
                     string name = Guid.NewGuid().ToString();
-                    si.imagePath = name + extension;
+                    s.imagePath = name + extension;
                     fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + name + extension));
-                    if (dm.addShare(s, si.imagePath))
+                    if (dm.addShare(s))
                     {
                         tb_sharingArea.Text = "";
                     }
                 }
+            }
+            else
+            {
+                s.imagePath = "none";
             }
         }
     }
