@@ -16,7 +16,9 @@
                         <a href="UserPanel.aspx" class="userClass">
                             <h3><%#Eval("user") %></h3>
                         </a>
+                        <br />
                         <p><%#Eval("content") %></p>
+                        <br />
                         <span><%#Eval("date") %></span>
                         <img src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" style='display: <%# Eval("display")%>' />
                         <label>Beğeni Sayısı <%#Eval("numberOfLikes") %></label>

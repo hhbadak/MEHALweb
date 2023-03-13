@@ -6,11 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace MEHALweb.UserPanel
 {
     public partial class Default1 : System.Web.UI.Page
     {
+        Sharing s = new Sharing();
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +46,12 @@ namespace MEHALweb.UserPanel
             }
             else
             {
-                s.imagePath = "none";
+                s.imagePath = "none.png";
+                fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + "none.png"));
+                if (dm.addShare(s))
+                {
+                    tb_sharingArea.Text = "";
+                }
             }
         }
     }

@@ -467,7 +467,7 @@ namespace DataAccessLayer
                     s.imagePath = reader.GetString(3);
                     s.date = reader.GetDateTime(4);
                     s.dateStr = reader.GetDateTime(4).ToShortDateString();
-                    s.display = reader.GetString(3) == null ? "none" : "visible";
+                    s.display = reader.GetString(3) == "none.png" ? "none" : "visible";
                     sharings.Add(s);
                 }
                 return sharings;
