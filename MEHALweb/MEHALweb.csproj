@@ -2268,6 +2268,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\BannerPhotografy\" />
     <Folder Include="Images\ProfilPhotografy\" />
     <Folder Include="Images\SharingPhotografy\" />
   </ItemGroup>

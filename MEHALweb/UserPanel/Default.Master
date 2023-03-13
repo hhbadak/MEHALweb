@@ -22,7 +22,7 @@
             <div class="userTab">
                 <div class="dropDown">
                     <a href="UserPanel.aspx">
-                        <asp:Image ID="img_pictureComing" runat="server"  />
+                        <asp:Image CssClass="linkPhoto" ID="img_pictureComing" runat="server"  />
                         <asp:Label ID="lbl_userControl" runat="server"></asp:Label>
                     </a>
                     <div class="menu">

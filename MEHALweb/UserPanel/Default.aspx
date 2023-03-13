@@ -20,8 +20,11 @@
                         <p><%#Eval("content") %></p>
                         <br />
                         <span><%#Eval("date") %></span>
-                        <img src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" style='display: <%# Eval("display")%>' />
+                        <div style="width: 100%; height: 340px; border-left: .1px solid #99B4BF; border-right: .1px solid #99B4BF;">
+                            <img src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" style='display: <%# Eval("display")%>' />
+                        </div>
                         <label>Beğeni Sayısı <%#Eval("numberOfLikes") %></label>
+                        <asp:LinkButton CssClass="likeButton" ID="likes" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="likeButton"><i class="fa-solid fa-thumbs-up"></i></asp:LinkButton>
                         <asp:TextBox ID="tb_sharingComment" runat="server"></asp:TextBox>
                         <asp:LinkButton CssClass="sendComment" ID="lbtn_sharingCommentSend" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="sendComment">Gönder
                         </asp:LinkButton>

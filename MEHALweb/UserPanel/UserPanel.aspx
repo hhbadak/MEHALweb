@@ -5,16 +5,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="userProfileStatic">
         <div class="bannerPhoto">
+            <asp:Image ID="img_bannerPicture" runat="server" />
         </div>
-        <div class="userProfilePhoto"></div>
+        <div class="userProfilePhoto">
+            <asp:Image ID="img_pictureComing" runat="server" />
+        </div>
         <div class="options">
+            <asp:FileUpload ID="fu_profilePicture" runat="server"></asp:FileUpload>
+            <asp:LinkButton ID="lbtn_addProfilePhoto" runat="server" OnClick="lbtn_addProfilePhoto_Click">ProfilFotoEkle</asp:LinkButton>
+            <asp:FileUpload ID="fu_bannerPicture" runat="server"></asp:FileUpload>
+            <asp:LinkButton ID="lbtn_bannerPicture" runat="server" OnClick="lbtn_bannerPicture_Click">Banner</asp:LinkButton>
         </div>
         <div class="userDescription"></div>
     </div>
     <div class="postsArea">
         <asp:Repeater ID="rp_postList" runat="server">
             <ItemTemplate>
-                <div class="sharingStyle">
+                <div class="sharingStyle" style="margin: 35% auto 1% auto;">
                     <a href="UserPanel.aspx" class="userClass">
                         <h3><%#Eval("user") %></h3>
                     </a>

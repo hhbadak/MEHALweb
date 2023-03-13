@@ -428,6 +428,25 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public bool addBannerPhoto(Users u)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Users SET Banner = @banner WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", u.ID);
+                cmd.Parameters.AddWithValue("@banner", u.banner);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+
         public bool addShare(Sharing s)
         {
             try
@@ -478,6 +497,9 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        #endregion
+        #region UPDATE METHOD
+
         #endregion
     }
 }
