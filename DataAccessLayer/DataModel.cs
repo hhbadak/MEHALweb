@@ -411,14 +411,20 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "SELECT UserName FROM Users WHERE ID = @id";
+                cmd.CommandText = "SELECT Name, Surname, UserName, EMail, Password, Images, Banner FROM Users WHERE ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 SqlDataReader reader = cmd.ExecuteReader();
                 Users u = new Users();
                 while (reader.Read())
                 {
-                    u.userName = reader.GetString(0);
+                    u.name = reader.GetString(0);
+                    u.surname = reader.GetString(1);
+                    u.userName = reader.GetString(2);
+                    u.eMail = reader.GetString(3);
+                    u.password = reader.GetString(4);
+                    u.image = !reader.IsDBNull(5) ? reader.GetString(5) : "none.png";
+                    u.banner = !reader.IsDBNull(6) ? reader.GetString(6) : "none.png";
                 }
                 return u;
             }

@@ -10,17 +10,22 @@ namespace MEHALweb.UserPanel
 {
     public partial class UserNameRename : System.Web.UI.Page
     {
+        DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataModel dm = new DataModel();
             if (Request.QueryString.Count != 0)
             {
                 if (!IsPostBack)
                 {
                     int id = Convert.ToInt32(Request.QueryString["mid"]);
-
                     Users u = dm.fetchUserName(id);
+                    tb_nameRename.Text = u.name;
+                    tb_surNameRename.Text = u.surname;
                     tb_userNameRename.Text = u.userName;
+                    tb_eMailRename.Text = u.eMail;
+                    tb_passwordRename.Text= u.password;
+                    img_profilePhoto.ImageUrl = "../Images/ProfilPhotografy/" + u.image;
+                    img_bannerPhoto.ImageUrl = "../Images/BannerPhotografy/" + u.banner;
                 }
             }
             else

@@ -15,6 +15,24 @@ namespace MEHALweb.UserPanel
     {
 
         /// <summary>
+        /// tb_nameRename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_nameRename;
+
+        /// <summary>
+        /// tb_surNameRename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_surNameRename;
+
+        /// <summary>
         /// tb_userNameRename control.
         /// </summary>
         /// <remarks>
@@ -22,6 +40,42 @@ namespace MEHALweb.UserPanel
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_userNameRename;
+
+        /// <summary>
+        /// tb_eMailRename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_eMailRename;
+
+        /// <summary>
+        /// tb_passwordRename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_passwordRename;
+
+        /// <summary>
+        /// img_profilePhoto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_profilePhoto;
+
+        /// <summary>
+        /// img_bannerPhoto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_bannerPhoto;
 
         /// <summary>
         /// lbtn_send control.
