@@ -22,12 +22,12 @@
             <div class="userTab">
                 <div class="dropDown">
                     <a href="UserPanel.aspx">
-                        <asp:Image CssClass="linkPhoto" ID="img_pictureComing" runat="server"  />
+                        <asp:Image CssClass="linkPhoto" ID="img_pictureComing" runat="server" />
                         <asp:Label ID="lbl_userControl" runat="server"></asp:Label>
                     </a>
                     <div class="menu">
                         <a href="UserPanel.aspx">Profil</a>
-                        <a href="#">Ayarlar</a>
+                        <a href="Settings.aspx">Ayarlar</a>
                         <a href="UserLogin.aspx">Çıkış</a>
                     </div>
                 </div>

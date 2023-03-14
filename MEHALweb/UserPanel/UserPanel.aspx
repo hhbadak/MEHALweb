@@ -16,7 +16,6 @@
             <asp:FileUpload ID="fu_bannerPicture" runat="server"></asp:FileUpload>
             <asp:LinkButton ID="lbtn_bannerPicture" runat="server" OnClick="lbtn_bannerPicture_Click">Banner</asp:LinkButton>
         </div>
-        <div class="userDescription"></div>
     </div>
     <div class="postsArea">
         <asp:Repeater ID="rp_postList" runat="server">

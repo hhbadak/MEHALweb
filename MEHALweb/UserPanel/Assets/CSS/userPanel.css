@@ -592,14 +592,6 @@ body {
     float: left;
 }
 
-.userDescription {
-    border: 1px solid black;
-    width: 38%;
-    height: 30%;
-    float: right;
-    margin-top: 22%;
-}
-
 .headerUserProfil {
     border: 1px solid black;
     width: 60%;
@@ -610,3 +602,34 @@ body {
     text-align: center;
     margin: 25% auto 0 auto;
 }
+
+.settingContainer {
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    margin: 10% auto 0 auto;
+    text-align: center;
+}
+
+    .settingContainer a {
+        text-decoration: none;
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 6%;
+        padding: 5px;
+        background-color: #2D4B73;
+        color: #99B4BF;
+        border-radius: 3px 5px 3px 5px;
+    }
+
+        .settingContainer a:hover {
+            background-color: #99B4BF;
+            color: #2D4B73;
+        }
+
+        .settingContainer a li {
+            display: block;
+        }

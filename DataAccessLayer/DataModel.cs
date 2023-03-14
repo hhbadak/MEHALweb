@@ -407,6 +407,27 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public Users fetchUserName(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT UserName FROM Users WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                Users u = new Users();
+                while (reader.Read())
+                {
+                    u.userName = reader.GetString(0);
+                }
+                return u;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         #endregion
 
         #region SHARING METHODS
