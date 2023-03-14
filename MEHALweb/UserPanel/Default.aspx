@@ -24,7 +24,7 @@
                             <img src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" style='display: <%# Eval("display")%>' />
                         </div>
                         <label>Beğeni Sayısı <%#Eval("numberOfLikes") %></label>
-                        <asp:LinkButton CssClass="likeButton" ID="likes" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="likeButton"><i class="fa-solid fa-thumbs-up"></i></asp:LinkButton>
+                        <asp:LinkButton CssClass="likeButton" ID="likes" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="likeButton" OnClick="likes_Click"><i class="fa-solid fa-thumbs-up"></i></asp:LinkButton>
                         <asp:TextBox ID="tb_sharingComment" runat="server"></asp:TextBox>
                         <asp:LinkButton CssClass="sendComment" ID="lbtn_sharingCommentSend" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="sendComment">Gönder
                         </asp:LinkButton>

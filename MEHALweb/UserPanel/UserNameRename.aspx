@@ -9,6 +9,8 @@
     <asp:TextBox ID="tb_eMailRename" runat="server"></asp:TextBox>
     <asp:TextBox ID="tb_passwordRename" runat="server"></asp:TextBox>
     <asp:Image ID="img_profilePhoto" runat="server" />
+    <asp:FileUpload ID="fu_profilePhoto" runat="server" />
     <asp:Image ID="img_bannerPhoto" runat="server" />
+    <asp:FileUpload ID="fu_bannerPhoto" runat="server" />
     <asp:LinkButton ID="lbtn_send" runat="server" OnClick="lbtn_send_Click">Kaydet</asp:LinkButton>
 </asp:Content>

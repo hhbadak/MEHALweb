@@ -69,6 +69,15 @@ namespace MEHALweb.UserPanel
         protected global::System.Web.UI.WebControls.Image img_profilePhoto;
 
         /// <summary>
+        /// fu_profilePhoto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fu_profilePhoto;
+
+        /// <summary>
         /// img_bannerPhoto control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace MEHALweb.UserPanel
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_bannerPhoto;
+
+        /// <summary>
+        /// fu_bannerPhoto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fu_bannerPhoto;
 
         /// <summary>
         /// lbtn_send control.

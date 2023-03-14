@@ -435,7 +435,29 @@ namespace DataAccessLayer
             finally { con.Close(); }
         }
         #endregion
-
+        public bool updateUser(Users u)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Users SET Name = @name, Surname = @surname, UserName = @userName, EMail = @mail, Password = @password, Images = @image, Banner = @banner WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@name", u.name);
+                cmd.Parameters.AddWithValue("@surname", u.surname);
+                cmd.Parameters.AddWithValue("@userName", u.userName);
+                cmd.Parameters.AddWithValue("@mail", u.eMail);
+                cmd.Parameters.AddWithValue("@password", u.password);
+                cmd.Parameters.AddWithValue("@image", u.image);
+                cmd.Parameters.AddWithValue("@banner", u.banner);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         #region SHARING METHODS
         public bool addProfilPhoto(Users u)
         {
@@ -473,7 +495,23 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
-
+        public bool increaseLikes(Sharing s)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Sharing SET NumberOfLikes = NumberOfLikes + 1 WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", s.ID);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         public bool addShare(Sharing s)
         {
             try

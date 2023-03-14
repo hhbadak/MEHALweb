@@ -38,12 +38,6 @@
                 <a href="Default.aspx"><i class="fa-solid fa-house"></i></a>
             </div>
             <div class="sidebarLogo">
-                <a href="MessagesPage.aspx"><i class="fa-solid fa-message"></i></a>
-            </div>
-            <div class="sidebarLogo">
-                <a href="#"><i class="fa-solid fa-bell"></i></a>
-            </div>
-            <div class="sidebarLogo">
                 <a href="DiscoverPage.aspx"><i class="fa-solid fa-earth-europe"></i></a>
             </div>
         </aside>

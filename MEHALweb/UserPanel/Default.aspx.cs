@@ -54,5 +54,9 @@ namespace MEHALweb.UserPanel
                 }
             }
         }
+
+        protected void likes_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
