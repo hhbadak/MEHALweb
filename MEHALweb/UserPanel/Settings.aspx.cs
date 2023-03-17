@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace MEHALweb.UserPanel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Users u = (Users)Session["user"];
+           
         }
     }
 }

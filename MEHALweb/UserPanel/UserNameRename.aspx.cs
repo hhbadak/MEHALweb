@@ -13,6 +13,7 @@ namespace MEHALweb.UserPanel
     public partial class UserNameRename : System.Web.UI.Page
     {
         DataModel dm = new DataModel();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             Users u = (Users)Session["user"];
@@ -39,7 +40,6 @@ namespace MEHALweb.UserPanel
 
         protected void lbtn_send_Click(object sender, EventArgs e)
         {
-
             int id = Convert.ToInt32(Request.QueryString["uid"]);
             Users u = dm.fetchUserName(id);
             u.name = tb_nameRename.Text;

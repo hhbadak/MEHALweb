@@ -27,7 +27,7 @@
                     </a>
                     <div class="menu">
                         <a href="UserPanel.aspx">Profil</a>
-                        <a href="Settings.aspx">Ayarlar</a>
+                        <a href="Settings.aspx?uid=<%# Eval("ID") %>">Ayarlar</a>
                         <a href="UserLogin.aspx">Çıkış</a>
                     </div>
                 </div>
