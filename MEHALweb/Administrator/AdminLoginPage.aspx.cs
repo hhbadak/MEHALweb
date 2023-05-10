@@ -16,11 +16,11 @@ namespace MEHALweb.Administrator
 
         }
 
-        protected void lbtn_login_Click(object sender, EventArgs e)
+        protected void lbtn_adminLogin_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tb_userName.Text) && !string.IsNullOrEmpty(tb_password.Text))
+            if (!string.IsNullOrEmpty(tb_userName.Value) && !string.IsNullOrEmpty(tb_password.Value))
             {
-                Users u = dm.loginAdmin(tb_userName.Text, tb_password.Text);
+                Users u = dm.loginAdmin(tb_userName.Value, tb_password.Value);
                 if (u != null)
                 {
                     if (u.status)
@@ -36,6 +36,7 @@ namespace MEHALweb.Administrator
                 }
                 else
                 {
+
                     pnl_error.Visible = true;
                     lbl_error.Text = "Kullanıcı Hesabı Bulunamadı";
                 }
@@ -43,7 +44,7 @@ namespace MEHALweb.Administrator
             else
             {
                 pnl_error.Visible = true;
-                lbl_error.Text = "Kullanıcı Adı ve Şifre Boş Olamaz";
+                lbl_error.Text = "Kullanıcı Aadı ve Şşifre Bboş Olamaz";
             }
         }
     }

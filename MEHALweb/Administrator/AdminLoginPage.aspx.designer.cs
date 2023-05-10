@@ -15,13 +15,22 @@ namespace MEHALweb.Administrator
     {
 
         /// <summary>
-        /// form1 control.
+        /// pnl_successs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel pnl_successs;
+
+        /// <summary>
+        /// lbl_success control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_success;
 
         /// <summary>
         /// pnl_error control.
@@ -48,7 +57,7 @@ namespace MEHALweb.Administrator
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_userName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tb_userName;
 
         /// <summary>
         /// tb_password control.
@@ -57,15 +66,15 @@ namespace MEHALweb.Administrator
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword tb_password;
 
         /// <summary>
-        /// lbtn_login control.
+        /// lbtn_adminLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_login;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_adminLogin;
     }
 }

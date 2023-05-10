@@ -2126,6 +2126,36 @@
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="Administrator\Assets\CSS\fontawesome\svgs\solid\z.svg" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.rtl.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.rtl.css" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.rtl.min.css" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.bundle.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.bundle.min.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.esm.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.esm.min.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.js" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.min.js" />
+    <Content Include="Assets\dashboard\dashboard.css" />
+    <Content Include="Assets\dashboard\dashboard.js" />
+    <Content Include="Assets\dashboard\index.html" />
+    <Content Include="Assets\JQuery\css\Slider.css" />
+    <Content Include="Assets\JQuery\scripts\dene.js" />
+    <Content Include="Assets\JQuery\scripts\jquery-3.6.4.min.js" />
+    <Content Include="Images\LOGO\checked.png" />
+    <Content Include="Images\LOGO\close.png" />
     <Content Include="Images\LOGO\MEHAL.jpg" />
     <Content Include="Images\LOGO\MEHAL.png" />
     <Content Include="UserPanel\Assets\CSS\DarkThemes.css" />
@@ -2142,6 +2172,7 @@
     <Content Include="UserPanel\UserLogin.aspx" />
     <Content Include="UserPanel\UserNameRename.aspx" />
     <Content Include="UserPanel\UserPanel.aspx" />
+    <Content Include="UserPanel\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2258,6 +2289,13 @@
     <Compile Include="UserPanel\UserPanel.aspx.designer.cs">
       <DependentUpon>UserPanel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPanel\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrator\Assets\CSS\fontawesome\less\brands.less" />
@@ -2314,6 +2352,28 @@
     <Content Include="Administrator\Assets\CSS\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Administrator\Assets\CSS\fontawesome\webfonts\fa-v4compatibility.woff2" />
     <Content Include="Administrator\AdminPanelArea.Master" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.rtl.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.bundle.js.map" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.esm.js.map" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.esm.min.js.map" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.js.map" />
+    <Content Include="Assets\bootstrap-5.3.0\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
     <Content Include="UserPanel\Default.Master" />
     <None Include="Web.Debug.config">
