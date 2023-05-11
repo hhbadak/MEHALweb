@@ -7,44 +7,72 @@
     <title>MEHAL ~ Anasayfa</title>
     <link href="Assets/CSS/userPanel.css" rel="stylesheet" />
     <link href="../Administrator/Assets/CSS/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../Assets/bootstrap-5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Assets/dashboard/dashboard.css" rel="stylesheet" />
+    <link href="../Assets/JQuery/css/Slider.css" rel="stylesheet" />
+    <link href="../Assets/fontawesome-free-6.4.0-web/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server" style="height: 100%">
-        <header class="header navyBlue">
-            <div class="defaultLogo">
-                <a href="Default.aspx">
-                    <img src="../Images/LOGO/MEHAL.png" />
-                </a>
-            </div>
-            <div class="userTab">
-                <div class="dropDown">
-                    <a href="UserPanel.aspx">
-                        <asp:Image CssClass="linkPhoto" ID="img_pictureComing" runat="server" />
-                        <asp:Label ID="lbl_userControl" runat="server"></asp:Label>
-                    </a>
-                    <div class="menu">
-                        <a href="UserPanel.aspx">Profil</a>
-                        <a href="Settings.aspx?uid=<%# Eval("ID") %>">Ayarlar</a>
-                        <a href="UserLogin.aspx">Çıkış</a>
+    <form id="default" runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-auto bg-light sticky-top">
+                    <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                        <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                            <i class="bi-bootstrap fs-1"></i>
+                        </a>
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link py-3 px-2" title="Anasayfa" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Anasayfa">
+                                    <i class="fa-solid fa-house"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" title="Mesajlar" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Mesajlar">
+                                    <i class="fa-solid fa-message"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" title="Bildirimler" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Bildirimler">
+                                    <i class="fa-solid fa-bell"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" title="Keşfet" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Keşfet">
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="dropdown pb-4">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="ddl_user" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../Images/LOGO/MEHAL.png" alt="hugenerd" width="50" height="50" class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="ddl_userPanel">
+                                <li><a class="dropdown-item" href="UserPanel.aspx">Profil</a></li>
+                                <li><a class="dropdown-item" href="#">Ayarlar</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="col-sm p-3 min-vh-100">
+                    <!-- content -->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </div>
-        </header>
-        <aside class="userSidebar navyBlue">
-            <div class="sidebarLogo">
-                <a href="Default.aspx"><i class="fa-solid fa-house"></i></a>
-            </div>
-            <div class="sidebarLogo">
-                <a href="DiscoverPage.aspx"><i class="fa-solid fa-earth-europe"></i></a>
-            </div>
-        </aside>
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="../Assets/bootstrap-5.3.0/js/bootstrap.min.js"></script>
+    <script src="../Assets/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../Assets/dashboard/dashboard.js"></script>
+    <script src="../Assets/JQuery/scripts/jquery-3.6.4.min.js"></script>
 </body>
+
 </html>

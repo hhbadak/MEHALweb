@@ -526,7 +526,7 @@ namespace DataAccessLayer
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }

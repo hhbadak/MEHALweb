@@ -29,7 +29,30 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form>
+                                    <form id="UserLogin" runat="server">
+
+                                        <asp:Panel ID="pnl_successs" runat="server" Visible="false">
+                                            <div class="alert alert-success d-flex align-items-center" role="alert">
+                                                <svg runat="server" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                                                    <%--<use xlink:href="#check-circle-fill" />--%>
+                                                    <img src="../Images/LOGO/checked.png" />&nbsp&nbsp&nbsp 
+                                                </svg>
+                                                <div>
+                                                    <asp:label id="lbl_success" runat="server"></asp:label>
+                                                </div>
+                                            </div>
+                                        </asp:Panel>
+                                        <asp:Panel ID="pnl_error" runat="server" Visible="false">
+                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                                                    <%--<use xlink:href="#exclamation-triangle-fill" />--%>
+                                                    <img src="../Images/LOGO/close.png" />&nbsp&nbsp&nbsp
+                                                </svg>
+                                                <div>
+                                                    <asp:label id="lbl_error" runat="server"></asp:label>
+                                                </div>
+                                            </div>
+                                        </asp:Panel>
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fa-brands fa-meetup" style="font-size: xxx-large;"></i>
@@ -39,17 +62,18 @@
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Hesabınıza Giriş Yapın</h5>
 
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="form2Example17" class="form-control form-control-lg" placeholder="E-Mail"/>
+                                            <input type="email" id="tb_loginUserName" runat="server" class="form-control form-control-lg" placeholder="E-Mail" />
                                             <%--<label class="form-label" for="form2Example17">Email Adresi</label>--%>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder="Şifre"/>
+                                            <input type="password" id="tb_loginPassword" runat="server" class="form-control form-control-lg" placeholder="Şifre" />
                                             <%--<label class="form-label" for="form2Example27">Şifre</label>--%>
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Giriş</button>
+                                            <asp:LinkButton ID="lbtn_userLogin" runat="server" CssClass="btn btn-dark btn-lg btn-block" Text="Giriş" OnClick="lbtn_userLogin_Click"></asp:LinkButton>
+                                           <%-- <button class="btn btn-dark btn-lg btn-block" type="button">Giriş</button>--%>
                                         </div>
 
                                         <a class="small text-muted" href="#!">Şifremi Unuttum</a>

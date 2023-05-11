@@ -16,43 +16,43 @@ namespace MEHALweb.UserPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            rp_postList.DataSource = dm.sharingList();
-            rp_postList.DataBind();
+            //rp_postList.DataSource = dm.sharingList();
+            //rp_postList.DataBind();
         }
 
         protected void lbtn_share_Click(object sender, EventArgs e)
         {
-            Sharing s = new Sharing();
-            Users u = (Users)Session["user"];
-            s.user_ID = u.ID;
-            s.numberOfLikes = 0;
-            s.content = tb_sharingArea.Text;
-            s.date = DateTime.Now;
-            s.status = true;
-            if (fu_picture.HasFile)
-            {
-                FileInfo fi = new FileInfo(fu_picture.FileName);
-                if (fi.Extension == ".jpg" || fi.Extension == ".png")
-                {
-                    string extension = fi.Extension;
-                    string name = Guid.NewGuid().ToString();
-                    s.imagePath = name + extension;
-                    fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + name + extension));
-                    if (dm.addShare(s))
-                    {
-                        tb_sharingArea.Text = "";
-                    }
-                }
-            }
-            else
-            {
-                s.imagePath = "none.png";
-                fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + "none.png"));
-                if (dm.addShare(s))
-                {
-                    tb_sharingArea.Text = "";
-                }
-            }
+            //Sharing s = new Sharing();
+            //Users u = (Users)Session["user"];
+            //s.user_ID = u.ID;
+            //s.numberOfLikes = 0;
+            //s.content = tb_sharingArea.Text;
+            //s.date = DateTime.Now;
+            //s.status = true;
+            //if (fu_picture.HasFile)
+            //{
+            //    FileInfo fi = new FileInfo(fu_picture.FileName);
+            //    if (fi.Extension == ".jpg" || fi.Extension == ".png")
+            //    {
+            //        string extension = fi.Extension;
+            //        string name = Guid.NewGuid().ToString();
+            //        s.imagePath = name + extension;
+            //        fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + name + extension));
+            //        if (dm.addShare(s))
+            //        {
+            //            tb_sharingArea.Text = "";
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    s.imagePath = "none.png";
+            //    fu_picture.SaveAs(Server.MapPath("~/Images/SharingPhotografy/" + "none.png"));
+            //    if (dm.addShare(s))
+            //    {
+            //        tb_sharingArea.Text = "";
+            //    }
+            //}
         }
 
         protected void likes_Click(object sender, EventArgs e)
