@@ -13,5 +13,23 @@ namespace MEHALweb.UserPanel
 
     public partial class Default1
     {
+
+        /// <summary>
+        /// lbtn_profile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_profile;
+
+        /// <summary>
+        /// btn_sharinCommentSend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_sharinCommentSend;
     }
 }
