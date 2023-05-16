@@ -11,70 +11,79 @@ namespace MEHALweb.UserPanel
 {
 
 
-    public partial class UserLogin
+    public partial class EditProfile
     {
 
         /// <summary>
-        /// pnl_successs control.
+        /// img_profileImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_successs;
+        protected global::System.Web.UI.WebControls.Image img_profileImage;
 
         /// <summary>
-        /// lbl_success control.
+        /// fu_profileImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_success;
+        protected global::System.Web.UI.WebControls.FileUpload fu_profileImage;
 
         /// <summary>
-        /// pnl_error control.
+        /// tb_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_error;
+        protected global::System.Web.UI.WebControls.TextBox tb_username;
 
         /// <summary>
-        /// lbl_error control.
+        /// tb_lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_error;
+        protected global::System.Web.UI.WebControls.TextBox tb_lastname;
 
         /// <summary>
-        /// tb_loginUserName control.
+        /// tb_firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_loginUserName;
+        protected global::System.Web.UI.WebControls.TextBox tb_firstname;
 
         /// <summary>
-        /// tb_loginPassword control.
+        /// tb_mail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_loginPassword;
+        protected global::System.Web.UI.WebControls.TextBox tb_mail;
 
         /// <summary>
-        /// lbtn_userLogin control.
+        /// tb_password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_userLogin;
+        protected global::System.Web.UI.WebControls.TextBox tb_password;
+
+        /// <summary>
+        /// lbtn_updateSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_updateSave;
     }
 }

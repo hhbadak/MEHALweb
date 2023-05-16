@@ -21,9 +21,9 @@
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <%--<img src="../Images/LOGO/MEHAL.jpg"
+                               <%--<img src="../Images/LOGO/MEHAL.jpg"
                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%;" />--%>
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -62,12 +62,14 @@
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Hesabınıza Giriş Yapın</h5>
 
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="tb_loginUserName" runat="server" class="form-control form-control-lg" placeholder="E-Mail" />
+                                            <%--<input type="text" id="tb_loginUserName" runat="server" class="form-control form-control-lg" placeholder="Kullanıcı Adı" />--%>
+                                            <asp:TextBox ID="tb_loginUserName" runat="server" CssClass="form-control form-control-lg" placeholder="Kullanıcı Adı"></asp:TextBox>
                                             <%--<label class="form-label" for="form2Example17">Email Adresi</label>--%>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="tb_loginPassword" runat="server" class="form-control form-control-lg" placeholder="Şifre" />
+                                            <%--<input type="password" id="tb_loginPassword" runat="server" class="form-control form-control-lg" placeholder="Şifre" />--%>
+                                            <asp:TextBox ID="tb_loginPassword" runat="server" CssClass="form-control form-control-lg" placeholder="Şifre" type="password"></asp:TextBox>
                                             <%--<label class="form-label" for="form2Example27">Şifre</label>--%>
                                         </div>
 

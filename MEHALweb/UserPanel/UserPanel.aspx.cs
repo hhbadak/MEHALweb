@@ -14,16 +14,15 @@ namespace MEHALweb.UserPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["user"] != null)
-            //{
-            //    Users u = (Users)Session["user"];
-            //    img_pictureComing.ImageUrl = "~/Images/ProfilPhotografy/" + u.image;
-            //    img_bannerPicture.ImageUrl = "~/Images/BannerPhotografy/" + u.banner;
-            //}
-            //else
-            //{
-            //    Response.Redirect("UserLogin.aspx");
-            //}
+            if (Session["user"] != null)
+            {
+                Users u = (Users)Session["user"];
+                img_pictureComing.ImageUrl = "../Images/ProfilPhotografy/" + u.image;
+            }
+            else
+            {
+                Response.Redirect("UserLogin.aspx");
+            }
         }
         protected void lbtn_bannerPicture_Click(object sender, EventArgs e)
         {
