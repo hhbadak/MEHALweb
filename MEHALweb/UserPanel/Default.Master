@@ -26,12 +26,12 @@
                         </a>
                         <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                             <li class="nav-item">
-                                <a href="#" class="nav-link py-3 px-2" title="Anasayfa" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Anasayfa">
+                                <a href="Default.aspx" class="nav-link py-3 px-2" title="Anasayfa" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Anasayfa">
                                     <i class="fa-solid fa-house"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link py-3 px-2" title="Mesajlar" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Mesajlar">
+                                <a href="MessagesPage.aspx" class="nav-link py-3 px-2" title="Mesajlar" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Mesajlar">
                                     <i class="fa-solid fa-message"></i>
                                 </a>
                             </li>
@@ -41,7 +41,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link py-3 px-2" title="Keşfet" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Keşfet">
+                                <a href="DiscoverPage.aspx" class="nav-link py-3 px-2" title="Keşfet" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Keşfet">
                                     <i class="fa-solid fa-globe"></i>
                                 </a>
                             </li>

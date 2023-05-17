@@ -18,6 +18,11 @@ namespace MEHALweb.UserPanel
             {
                 Users u = (Users)Session["user"];
                 img_pictureComing.ImageUrl = "../Images/ProfilPhotografy/" + u.image;
+                lbl_name.Text = u.name;
+                lbl_surname.Text = u.surname;
+                lbl_username.Text = "@" + u.userName;
+                rp_sharing.DataSource = dm.sharingList();
+                rp_sharing.DataBind();
             }
             else
             {

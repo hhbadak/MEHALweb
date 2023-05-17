@@ -15,8 +15,9 @@
                                     style="z-index: 1;">Profili Düzenle</a>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h5>Andy Horwitz</h5>
-                                <p>New York</p>
+                                <asp:Label ID="lbl_name" runat="server"></asp:Label>
+                                <asp:Label ID="lbl_surname" runat="server"></asp:Label><br />
+                                <asp:Label ID="lbl_username" runat="server"></asp:Label>
                             </div>
                         </div>
                         <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -35,43 +36,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body p-4 text-black">
-                            <div class="mb-5">
-                                <p class="lead fw-normal mb-1">About</p>
-                                <div class="p-4" style="background-color: #f8f9fa;">
-                                    <p class="font-italic mb-1">Web Developer</p>
-                                    <p class="font-italic mb-1">Lives in New York</p>
-                                    <p class="font-italic mb-0">Photographer</p>
-                                </div>
+                    </div>
+                </div>
+            </div>
+            <asp:Repeater ID="rp_sharing" runat="server">
+                <ItemTemplate>
+                    <div class="col-lg-4 mx-auto">
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <%--<asp:LinkButton ID="lbtn_profile" runat="server" CssClass="btn btn-outline-info float-end" <%# Eval("UserName") %></asp:LinkButton><br />--%>
+                                <br />
+                                <h2><%# Eval("Content") %></h2>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <p class="lead fw-normal mb-0">Recent photos</p>
-                                <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+                            <div class="card-body">
+                                <a href="../Images/SharingPhotografy/<%# Eval("imagePath") %>" target="_blank">
+                                    <img src="../Images/SharingPhotografy/<%# Eval("imagePath") %>" class="img-thumbnail" />
+                                </a>
                             </div>
-                            <div class="row g-2">
-                                <div class="col mb-2">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                                        alt="image 1" class="w-100 rounded-3">
+                            <div class="card-footer">
+                                <div class="btn-group">
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn-light btn-sm w-100"><i class="fa-regular fa-thumbs-up"></i>&nbsp Beğen</a>
+                                    </div>
+                                    <div class="col-8">
+                                        <a href="#" class="btn btn-light btn-sm w-100"><i class="fa-regular fa-comment"></i>&nbsp Yorum Yap</a>
+                                    </div>
                                 </div>
-                                <div class="col mb-2">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
-                                        alt="image 1" class="w-100 rounded-3">
-                                </div>
-                            </div>
-                            <div class="row g-2">
-                                <div class="col">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                                        alt="image 1" class="w-100 rounded-3">
-                                </div>
-                                <div class="col">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                                        alt="image 1" class="w-100 rounded-3">
+                                <div class="row">
+                                    <div class="col-10 mt-2">
+                                        <%--<asp:TextBox ID="tb_sharingComment" runat="server" CssClass="form-control" Rows="5"></asp:TextBox>--%>
+                                        <textarea class="form-control" rows="2"></textarea>
+                                    </div>
+                                    <div class="col-2 mt-4">
+                                        <asp:LinkButton ID="btn_sharinCommentSend" runat="server" CssClass="btn btn-outline-primary btn-sm float-end">Gönder</asp:LinkButton>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </section>
 </asp:Content>

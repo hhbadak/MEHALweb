@@ -196,6 +196,31 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public List<Users> listDiscoverUser(Users u)
+        {
+            try
+            {
+                List<Users> model = new List<Users>();
+                cmd.CommandText = "SELECT Images, Name, Surname, UserName FROM Users WHERE ID IN (SELECT TOP 6 ID FROM Users WHERE MemberStatus_ID = 2 ORDER BY NEWID());";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    u.image = reader.GetString(0);
+                    u.name = reader.GetString(1);
+                    u.surname = reader.GetString(2);
+                    u.userName = reader.GetString(3);
+                    model.Add(u);
+                }
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         #endregion
 
         #region DELETION METHODS
