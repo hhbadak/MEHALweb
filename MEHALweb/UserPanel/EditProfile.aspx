@@ -19,7 +19,7 @@
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                         <!-- Profile picture upload button-->
                         <%--<button class="btn btn-primary" type="button">Upload new image</button>--%>
-                        <asp:FileUpload ID="fu_profileImage" runat="server" CssClass="form-control"></asp:FileUpload>
+                        <asp:FileUpload ID="fu_profileImage" runat="server" CssClass="form-control" OnChange="profileImageChanged()" />
                     </div>
                 </div>
             </div>
@@ -72,6 +72,20 @@
 <asp:Content ID="content3" ContentPlaceHolderID="scriptPlaceHolder" runat="server">
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script>
+        function profileImageChanged() {
+            var fileUpload = document.getElementById("<%=fu_profileImage.ClientID%>");
+            var image = document.getElementById("<%=img_profileImage.ClientID%>");
+
+            if (fileUpload.files && fileUpload.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    image.src = e.target.result;
+                };
+                reader.readAsDataURL(fileUpload.files[0]);
+            }
+        }
+    </script>
+    <%--<script>
         function readUrl(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -84,5 +98,5 @@
         $("#ContentPlaceHolder1_fu_profileImage").change(function () {
             readUrl(this);
         })
-    </script>
+    </script>--%>
 </asp:Content>

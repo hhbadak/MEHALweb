@@ -33,6 +33,15 @@ namespace MEHALweb.UserPanel
         protected global::System.Web.UI.HtmlControls.HtmlForm @default;
 
         /// <summary>
+        /// img_ddProfilImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_ddProfilImage;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

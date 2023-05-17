@@ -343,7 +343,7 @@ namespace DataAccessLayer
                 cmd.CommandText = "SELECT COUNT(*) FROM Users WHERE MemberStatus_ID = 2 AND UserName = @uName AND Password = @password";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@uName", username);
-                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("@password", password);
                 con.Open();
                 int number = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -352,7 +352,7 @@ namespace DataAccessLayer
                     cmd.CommandText = "SELECT u.ID, u.Name, u.Surname, u.UserName, u.EMail, u.Password, u.DateOfBirth, u.Images, m.Status, u.DateOfRegistration, u.Status FROM Users AS u\r\nJOIN MemberStatus AS m ON m.ID = u.MemberStatus_ID\r\nWHERE u.UserName = @uName AND u.Password = @password";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@uName", username);
-                    cmd.Parameters.AddWithValue("password", password);
+                    cmd.Parameters.AddWithValue("@password", password);
                     SqlDataReader reader = cmd.ExecuteReader();
                     Users u = new Users();
                     while (reader.Read())

@@ -10,8 +10,8 @@
                     <div class="card">
                         <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height: 200px;">
                             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                <asp:Image ID="img_pictureComing" runat="server" />
-                                <a href="EditProfile.aspx" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                                <asp:Image CssClass="rounded-circle" ID="img_pictureComing" runat="server" />
+                                <a href="EditProfile.aspx" class="btn btn-outline-dark mt-2" data-mdb-ripple-color="dark"
                                     style="z-index: 1;">Profili Düzenle</a>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
