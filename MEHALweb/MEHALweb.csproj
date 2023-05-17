@@ -4212,12 +4212,14 @@
     <Content Include="Assets\JQuery\css\Slider.css" />
     <Content Include="Assets\JQuery\scripts\dene.js" />
     <Content Include="Assets\JQuery\scripts\jquery-3.6.4.min.js" />
+    <Content Include="Images\LOGO\calendar.png" />
     <Content Include="Images\LOGO\checked.png" />
     <Content Include="Images\LOGO\close.png" />
     <Content Include="Images\LOGO\MEHAL.jpg" />
     <Content Include="Images\LOGO\MEHAL.png" />
     <Content Include="UserPanel\Assets\CSS\DarkThemes.css" />
     <Content Include="UserPanel\Assets\CSS\EditProfile.css" />
+    <Content Include="UserPanel\Assets\CSS\RegisterPage.css" />
     <Content Include="UserPanel\Assets\CSS\userPanel.css" />
     <Content Include="UserPanel\Default.aspx" />
     <Content Include="UserPanel\DiscoverPage.aspx" />
@@ -4226,6 +4228,7 @@
     <Content Include="UserPanel\MessagesPage.aspx" />
     <Content Include="UserPanel\NameRename.aspx" />
     <Content Include="UserPanel\PasswordRename.aspx" />
+    <Content Include="UserPanel\Register.aspx" />
     <Content Include="UserPanel\Settings.aspx" />
     <Content Include="UserPanel\SurnameRename.aspx" />
     <Content Include="UserPanel\SuspentAccount.aspx" />
@@ -4313,6 +4316,13 @@
     </Compile>
     <Compile Include="UserPanel\PasswordRename.aspx.designer.cs">
       <DependentUpon>PasswordRename.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPanel\Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
