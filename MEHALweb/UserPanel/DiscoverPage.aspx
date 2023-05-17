@@ -14,7 +14,7 @@
                                     <div class="flex-shrink-0">
                                         <img src="../Images/ProfilPhotografy/<%# Eval("Image") %>"
                                             alt="Generic placeholder image" class="img-fluid"
-                                            style="width: 180px; border-radius: 10px;">
+                                            style="width: 180px; height:250px; border-radius: 10px;">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mb-1"><%# Eval("Name") %></h5>

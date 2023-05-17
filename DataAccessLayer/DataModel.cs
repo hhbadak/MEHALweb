@@ -207,11 +207,12 @@ namespace DataAccessLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    u.image = reader.GetString(0);
-                    u.name = reader.GetString(1);
-                    u.surname = reader.GetString(2);
-                    u.userName = reader.GetString(3);
-                    model.Add(u);
+                    Users users = new Users();
+                    users.image = reader.GetString(0);
+                    users.name = reader.GetString(1);
+                    users.surname = reader.GetString(2);
+                    users.userName = reader.GetString(3);
+                    model.Add(users);
                 }
                 return model;
             }
