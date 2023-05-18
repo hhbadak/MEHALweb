@@ -4219,7 +4219,6 @@
     <Content Include="Images\LOGO\MEHAL.png" />
     <Content Include="UserPanel\Assets\CSS\DarkThemes.css" />
     <Content Include="UserPanel\Assets\CSS\EditProfile.css" />
-    <Content Include="UserPanel\Assets\CSS\RegisterPage.css" />
     <Content Include="UserPanel\Assets\CSS\userPanel.css" />
     <Content Include="UserPanel\Default.aspx" />
     <Content Include="UserPanel\DiscoverPage.aspx" />

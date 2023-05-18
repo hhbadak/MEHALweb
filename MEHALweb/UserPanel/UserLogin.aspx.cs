@@ -119,5 +119,24 @@ namespace MEHALweb.UserPanel
             //pnl_registerBox.Visible = true;
             //pnl_loginBox.Visible = false;
         }
+
+        protected void lbtn_resetPassword_Click(object sender, EventArgs e)
+        {
+            Users u = new Users();
+            if (dm.fetchMailAdress(tb_resetMail.Text.Trim()))
+            {
+                if (dm.updatePassword(tb_resetPassword.Text.Trim(), tb_resetMail.Text.Trim()))
+                {
+                    u.password = tb_resetPassword.Text;
+                    pnl_successs.Visible = true;
+                    lbl_success.Text = "Başarılı";
+                }
+            }
+            else
+            {
+                pnl_error.Visible = true;
+                lbl_error.Text = "başarısız";
+            }
+        }
     }
 }

@@ -222,6 +222,23 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public bool fetchMailAdress(string mail)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT COUNT(*) FROM Users WHERE Email = @mail";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@mail", mail);
+                con.Open();
+                int number = Convert.ToInt32(cmd.ExecuteScalar());
+                if (number > 0)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+            finally { con.Close(); }
+        }
         #endregion
 
         #region DELETION METHODS
@@ -590,7 +607,24 @@ namespace DataAccessLayer
         }
         #endregion
         #region UPDATE METHOD
-
+        public bool updatePassword(string password, string mail)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Users SET Password = @password WHERE EMail = @mail";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@mail", mail);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         #endregion
     }
 }

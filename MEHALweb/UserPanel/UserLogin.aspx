@@ -21,8 +21,6 @@
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                               <%--<img src="../Images/LOGO/MEHAL.jpg"
-                                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%;" />--%>
                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                             </div>
@@ -78,9 +76,40 @@
                                            <%-- <button class="btn btn-dark btn-lg btn-block" type="button">Giriş</button>--%>
                                         </div>
 
-                                        <a class="small text-muted" href="#!">Şifremi Unuttum</a>
+                                        <%--Şifremi Unuttum--%>
+
+                                            <!-- Button trigger modal -->
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration:underline;">
+            Şifremi unuttum
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+            <div class="modal-dialog" style="width: 300px;">
+                <div class="modal-content text-center">
+                    <div class="modal-header h5 text-white bg-primary justify-content-center">
+                        ŞİFRE SIFIRLAMA EKRANI
+                    </div>
+                    <div class="modal-body px-5">
+                        <p class="py-2">
+                           Şifrenizi hatırlamıyorsanız, yeni şifre belirlemek için tuşlama yapınız.
+                        </p>
+                         <div class="form-outline">
+                            <asp:TextBox ID="tb_resetMail" runat="server" placeholder="E-Mail Adresinizi Giriniz" CssClass="form-control my-3"></asp:TextBox>
+                        </div>
+                        <div class="form-outline">
+                            <asp:TextBox ID="tb_resetPassword" type="password" runat="server" placeholder="Şifre Giriniz" CssClass="form-control my-3"></asp:TextBox>
+                        </div>
+                        <asp:LinkButton ID="lbtn_resetPassword" runat="server" CssClass="btn btn-primary w-100" OnClick="lbtn_resetPassword_Click">Şifreyi Yenile</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                                        <%--Hesap Oluştur--%>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;">
-                                            Hesabın Yok Mu? <a href="#!"
+                                            Hesabın Yok Mu? <a href="Register.aspx"
                                                 style="color: #393f81;">Kayıt Ol</a>
                                         </p>
                                         <a href="#!" class="small text-muted">Kullanım Şartları.</a>

@@ -14,12 +14,12 @@
                                     <div class="flex-shrink-0">
                                         <img src="../Images/ProfilPhotografy/<%# Eval("Image") %>"
                                             alt="Generic placeholder image" class="img-fluid"
-                                            style="width: 180px; height:250px; border-radius: 10px;">
+                                            style="width: 180px; height: 250px; border-radius: 10px;">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mb-1"><%# Eval("Name") %></h5>
                                         <h5 class="mb-1"><%# Eval("Surname") %></h5>
-                                        <p class="mb-2 pb-1" style="color: #2b2a2a;">@<%# Eval("UserName") %></p>
+                                        <a href='<%# "UserPanel.aspx?id=" + Eval("ID") %>' class="mb-2 pb-1" style="color: #2b2a2a;" onclick="">@<%# Eval("UserName") %></a>
                                         <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
                                             style="background-color: #efefef;">
                                             <div>
@@ -36,8 +36,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex pt-1">
-                                            <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
-                                            <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
+                                            <asp:LinkButton ID="lbtn_follow" runat="server" CssClass="btn btn-primary">Ekle</asp:LinkButton>
                                         </div>
                                     </div>
                                 </div>
