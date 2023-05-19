@@ -138,6 +138,32 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public Users getUser(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Name, Surname, UserName, Images FROM Users WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                Users u = new Users();
+                while (reader.Read())
+                {
+                    u.name = reader.GetString(0);
+                    u.surname = reader.GetString(1);
+                    u.userName = reader.GetString(2);
+                    u.image = reader.GetString(3);
+                }
+                return u;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         public List<Complaints> listSharingComplaint()
         {
             try
@@ -474,6 +500,25 @@ namespace DataAccessLayer
             catch
             {
                 return null;
+            }
+            finally { con.Close(); }
+        }
+        public bool friendRequest(Friendship model)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO FriendShip(OutGoingRequest, InComingRequest, Date, Status) VALUES(@sender, @recipient, @date, @status)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@sender", model.outGoingRequest);
+                cmd.Parameters.AddWithValue("@recipient", model.inCoimgRequest);
+                cmd.Parameters.AddWithValue("@date", DateTime.Now);
+                cmd.Parameters.AddWithValue("@status", 0);
+                con.Open();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
             finally { con.Close(); }
         }

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-4">
         <div class="row w-100">
-            <asp:Repeater ID="rp_discoverUser" runat="server">
+            <asp:Repeater ID="rp_discoverUser" runat="server" OnItemCommand="rp_discoverUser_ItemCommand">
                 <ItemTemplate>
                     <div class="col-xxl-4">
                         <div class="card">
@@ -19,7 +19,7 @@
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mb-1"><%# Eval("Name") %></h5>
                                         <h5 class="mb-1"><%# Eval("Surname") %></h5>
-                                        <a href='<%# "UserPanel.aspx?id=" + Eval("ID") %>' class="mb-2 pb-1" style="color: #2b2a2a;" onclick="">@<%# Eval("UserName") %></a>
+                                        <a href='UserPage.aspx?uid=<%# Eval("ID") %>' class="mb-2 pb-1" style="color: #2b2a2a;" onclick="">@<%# Eval("UserName") %></a>
                                         <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
                                             style="background-color: #efefef;">
                                             <div>
@@ -36,7 +36,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex pt-1">
-                                            <asp:LinkButton ID="lbtn_follow" runat="server" CssClass="btn btn-primary">Ekle</asp:LinkButton>
+                                            <asp:LinkButton ID="lbtn_follow" runat="server" CssClass="btn btn-primary" OnClick="lbtn_follow_Click">Ekle</asp:LinkButton>
                                         </div>
                                     </div>
                                 </div>

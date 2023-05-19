@@ -24,5 +24,15 @@ namespace MEHALweb.UserPanel
                 Response.Redirect("UserLogin.aspx");
             }
         }
+
+        protected void lbtn_follow_Click(object sender, EventArgs e)
+        {
+            Friendship fs = new Friendship();
+            dm.friendRequest(fs);
+        }
+
+        protected void rp_discoverUser_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+        }
     }
 }

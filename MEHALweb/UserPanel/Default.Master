@@ -11,6 +11,7 @@
     <link href="../Assets/dashboard/dashboard.css" rel="stylesheet" />
     <link href="../Assets/JQuery/css/Slider.css" rel="stylesheet" />
     <link href="../Assets/fontawesome-free-6.4.0-web/css/all.min.css" rel="stylesheet" />
+    <link href="Assets/CSS/Notifications.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -36,7 +37,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link py-3 px-2" title="Bildirimler" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Bildirimler">
+                                <a href="Notifications.aspx" class="nav-link py-3 px-2" title="Bildirimler" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Bildirimler">
                                     <i class="fa-solid fa-bell"></i>
                                 </a>
                             </li>

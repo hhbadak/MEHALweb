@@ -4219,6 +4219,7 @@
     <Content Include="Images\LOGO\MEHAL.png" />
     <Content Include="UserPanel\Assets\CSS\DarkThemes.css" />
     <Content Include="UserPanel\Assets\CSS\EditProfile.css" />
+    <Content Include="UserPanel\Assets\CSS\Notifications.css" />
     <Content Include="UserPanel\Assets\CSS\userPanel.css" />
     <Content Include="UserPanel\Default.aspx" />
     <Content Include="UserPanel\DiscoverPage.aspx" />
@@ -4226,6 +4227,7 @@
     <Content Include="UserPanel\EMailRename.aspx" />
     <Content Include="UserPanel\MessagesPage.aspx" />
     <Content Include="UserPanel\NameRename.aspx" />
+    <Content Include="UserPanel\Notifications.aspx" />
     <Content Include="UserPanel\PasswordRename.aspx" />
     <Content Include="UserPanel\Register.aspx" />
     <Content Include="UserPanel\Settings.aspx" />
@@ -4233,6 +4235,7 @@
     <Content Include="UserPanel\SuspentAccount.aspx" />
     <Content Include="UserPanel\UserLogin.aspx" />
     <Content Include="UserPanel\UserNameRename.aspx" />
+    <Content Include="UserPanel\UserPage.aspx" />
     <Content Include="UserPanel\UserPanel.aspx" />
     <Content Include="UserPanel\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -4309,6 +4312,13 @@
     <Compile Include="UserPanel\NameRename.aspx.designer.cs">
       <DependentUpon>NameRename.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPanel\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel\PasswordRename.aspx.cs">
       <DependentUpon>PasswordRename.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4357,6 +4367,13 @@
     </Compile>
     <Compile Include="UserPanel\UserNameRename.aspx.designer.cs">
       <DependentUpon>UserNameRename.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPanel\UserPage.aspx.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPanel\UserPage.aspx.designer.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPanel\UserPanel.aspx.cs">
       <DependentUpon>UserPanel.aspx</DependentUpon>
