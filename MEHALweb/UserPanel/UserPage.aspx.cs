@@ -13,11 +13,24 @@ namespace MEHALweb.UserPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString.Count != 0)
+            if (!IsPostBack)
             {
-                int id= Convert.ToInt32(Request.QueryString["uid"]);
-                Users u = dm.getUser(id);
-                ltrl_name.Text = u.name;
+                if (Request.QueryString["uid"] != null)
+                {
+                    int userID = Convert.ToInt32(Request.QueryString["uid"]);
+                    string profileURL = "UserPage.aspx?uid=" + userID;
+
+                    Users u = new Users();
+                    img_pictureComing.ImageUrl = "../Images/ProfilPhotografy/" + u.image;
+                    lbl_name.Text = u.name;
+                    lbl_surname.Text = u.surname;
+                    lbl_username.Text = "@" + u.userName;
+                    rp_sharing.DataSource = dm.sharingList();
+                    rp_sharing.DataBind();
+
+
+                    Response.Redirect(profileURL);
+                }
             }
         }
     }

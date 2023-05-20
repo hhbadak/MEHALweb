@@ -19,7 +19,9 @@
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mb-1"><%# Eval("Name") %></h5>
                                         <h5 class="mb-1"><%# Eval("Surname") %></h5>
-                                        <a href='UserPage.aspx?uid=<%# Eval("ID") %>' class="mb-2 pb-1" style="color: #2b2a2a;" onclick="">@<%# Eval("UserName") %></a>
+                                        <%-- <a href='UserPage.aspx?uid=<%# Eval("ID") %>' class="mb-2 pb-1" style="color: #2b2a2a;">@<%# Eval("UserName") %></a>--%>
+                                        <a href='UserPage.aspx?uid=<%# Eval("ID") %>' class="mb-2 pb-1" style="color: #2b2a2a;">@<%# Eval("UserName") %></a>
+
                                         <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
                                             style="background-color: #efefef;">
                                             <div>
