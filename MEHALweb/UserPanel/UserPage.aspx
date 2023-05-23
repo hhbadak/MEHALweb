@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPanel/Default.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="MEHALweb.UserPanel.UserPage" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -9,10 +10,11 @@
                 <div class="col col-lg-9 col-xl-7">
                     <div class="card">
                         <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height: 200px;">
-                            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                <asp:Image CssClass="rounded-circle" ID="img_pictureComing" runat="server" />
-                                <a href="EditProfile.aspx" class="btn btn-outline-dark mt-2" data-mdb-ripple-color="dark"
-                                    style="z-index: 1;">Profili Düzenle</a>
+                            <div class="ms-4 mt-5 d-flex flex-column">
+                                <asp:Image CssClass="rounded-circle img-fluid userPageImageDimension mt-5" ID="img_pictureComing" runat="server" />
+                                <asp:LinkButton ID="lbtn_addFriend" runat="server" CssClass="btn btn-outline-dark mt-3" OnClick="lbtn_addFriend_Click" data-mdb-ripple-color="dark" Style="z-index: 1;"
+                                    CommandArgument='<%# Eval("uid") %>' Visible="true">Arkadaş Ekle</asp:LinkButton>
+                                <asp:Label CssClass="form-control mt-5 waitRequest text-warning text-bg-infor" ID="lbl_waitRequest" runat="server" Visible="false">Arkadaşlık İsteği Bekliyor</asp:Label>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
                                 <asp:Label ID="lbl_name" runat="server"></asp:Label>

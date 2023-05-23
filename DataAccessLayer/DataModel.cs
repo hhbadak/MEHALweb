@@ -621,6 +621,25 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+        public bool addFriend(Friendship model)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO FriendShip(OutGoingRequest, InComingRequest, Date, Status) VALUES(@outGoing, @inComing, @date, 0)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@outGoing", model.outGoingRequest);
+                cmd.Parameters.AddWithValue("@inComing", model.inCoimgRequest);
+                cmd.Parameters.AddWithValue("@date", model.date);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         public List<Sharing> sharingList()
         {
             List<Sharing> sharings = new List<Sharing>();
@@ -633,7 +652,6 @@ namespace DataAccessLayer
                 while (reader.Read())
                 {
                     Sharing s = new Sharing();
-                    Users u = new Users();
                     s.user = reader.GetString(0);
                     s.numberOfLikes = reader.GetInt32(1);
                     s.content = reader.GetString(2);
